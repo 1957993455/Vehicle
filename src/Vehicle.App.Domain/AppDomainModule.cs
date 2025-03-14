@@ -22,6 +22,7 @@ using OrderManagement;
 using PaymentManagement;
 using AuditLogManagement;
 using FileManagement;
+using Vehicle.Cache.Redis;
 
 namespace Vehicle.App;
 
@@ -42,6 +43,7 @@ namespace Vehicle.App;
 [DependsOn(typeof(PaymentManagementDomainModule))]
 [DependsOn(typeof(AuditLogManagementDomainModule))]
 [DependsOn(typeof(FileManagementDomainModule))]
+[DependsOn(typeof(VehicleCacheRedisModule))]
     public class AppDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

@@ -14,6 +14,7 @@ public class VehicleCacheRedisModule:AbpModule
     {
         Configure<RedisCacheOptions>(options =>
         {
+            options.InstanceName = "ccc";
         });
     }
 }
