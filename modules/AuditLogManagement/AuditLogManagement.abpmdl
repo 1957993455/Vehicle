@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "AuditLogManagement.Domain.Shared": {
+      "path": "src/AuditLogManagement.Domain.Shared/AuditLogManagement.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.Domain": {
+      "path": "src/AuditLogManagement.Domain/AuditLogManagement.Domain.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.Application.Contracts": {
+      "path": "src/AuditLogManagement.Application.Contracts/AuditLogManagement.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.Application": {
+      "path": "src/AuditLogManagement.Application/AuditLogManagement.Application.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.EntityFrameworkCore": {
+      "path": "src/AuditLogManagement.EntityFrameworkCore/AuditLogManagement.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.MongoDB": {
+      "path": "src/AuditLogManagement.MongoDB/AuditLogManagement.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.HttpApi": {
+      "path": "src/AuditLogManagement.HttpApi/AuditLogManagement.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.HttpApi.Client": {
+      "path": "src/AuditLogManagement.HttpApi.Client/AuditLogManagement.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.TestBase": {
+      "path": "test/AuditLogManagement.TestBase/AuditLogManagement.TestBase.abppkg",
+      "folder": "test"
+    },
+    "AuditLogManagement.EntityFrameworkCore.Tests": {
+      "path": "test/AuditLogManagement.EntityFrameworkCore.Tests/AuditLogManagement.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "AuditLogManagement.MongoDB.Tests": {
+      "path": "test/AuditLogManagement.MongoDB.Tests/AuditLogManagement.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "AuditLogManagement.Domain.Tests": {
+      "path": "test/AuditLogManagement.Domain.Tests/AuditLogManagement.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "AuditLogManagement.Application.Tests": {
+      "path": "test/AuditLogManagement.Application.Tests/AuditLogManagement.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "AuditLogManagement.HttpApi.Host": {
+      "path": "host/AuditLogManagement.HttpApi.Host/AuditLogManagement.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "AuditLogManagement.Web": {
+      "path": "src/AuditLogManagement.Web/AuditLogManagement.Web.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/AuditLogManagement.HttpApi.Client.ConsoleTestApp/AuditLogManagement.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "AuditLogManagement.Web.Host": {
+      "path": "host/AuditLogManagement.Web.Host/AuditLogManagement.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "AuditLogManagement.AuthServer": {
+      "path": "host/AuditLogManagement.AuthServer/AuditLogManagement.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "AuditLogManagement.Host.Shared": {
+      "path": "host/AuditLogManagement.Host.Shared/AuditLogManagement.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "AuditLogManagement.Web.Unified": {
+      "path": "host/AuditLogManagement.Web.Unified/AuditLogManagement.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "AuditLogManagement.Blazor": {
+      "path": "src/AuditLogManagement.Blazor/AuditLogManagement.Blazor.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.Blazor.Host": {
+      "path": "host/AuditLogManagement.Blazor.Host/AuditLogManagement.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "AuditLogManagement.Blazor.Server": {
+      "path": "src/AuditLogManagement.Blazor.Server/AuditLogManagement.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.Blazor.WebAssembly": {
+      "path": "src/AuditLogManagement.Blazor.WebAssembly/AuditLogManagement.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "AuditLogManagement.Blazor.Server.Host": {
+      "path": "host/AuditLogManagement.Blazor.Server.Host/AuditLogManagement.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}

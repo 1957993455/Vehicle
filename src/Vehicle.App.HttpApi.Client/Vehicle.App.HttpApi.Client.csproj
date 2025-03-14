@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Vehicle.App</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vehicle.App.Application.Contracts\Vehicle.App.Application.Contracts.csproj" /><ProjectReference Include="..\..\modules\VehicleManagement\src\VehicleManagement.HttpApi.Client\VehicleManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\OrderManagement\src\OrderManagement.HttpApi.Client\OrderManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\PaymentManagement\src\PaymentManagement.HttpApi.Client\PaymentManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.HttpApi.Client\AuditLogManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.HttpApi.Client\FileManagement.HttpApi.Client.csproj" /></ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi.Client" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.HttpApi.Client" Version="9.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.Account.HttpApi.Client" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.HttpApi.Client" Version="9.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="**\*generate-proxy.json" />
+    <Content Remove="**\*generate-proxy.json" />
+  </ItemGroup>
+
+</Project>

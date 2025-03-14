@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Vehicle.App</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vehicle.App.Domain.Shared\Vehicle.App.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\VehicleManagement\src\VehicleManagement.Application.Contracts\VehicleManagement.Application.Contracts.csproj" /><ProjectReference Include="..\..\modules\OrderManagement\src\OrderManagement.Application.Contracts\OrderManagement.Application.Contracts.csproj" /><ProjectReference Include="..\..\modules\PaymentManagement\src\PaymentManagement.Application.Contracts\PaymentManagement.Application.Contracts.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.Application.Contracts\AuditLogManagement.Application.Contracts.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.Application.Contracts\FileManagement.Application.Contracts.csproj" /></ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application.Contracts" Version="9.1.0" />
+  </ItemGroup>
+
+</Project>

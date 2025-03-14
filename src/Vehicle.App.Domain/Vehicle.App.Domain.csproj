@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Vehicle.App</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\framework\Vehicle.Core\Vehicle.Core.csproj" />
+    <ProjectReference Include="..\Vehicle.App.Domain.Shared\Vehicle.App.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\VehicleManagement\src\VehicleManagement.Domain\VehicleManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\OrderManagement\src\OrderManagement.Domain\OrderManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\PaymentManagement\src\PaymentManagement.Domain\PaymentManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.Domain\AuditLogManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.Domain\FileManagement.Domain.csproj" /></ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.OpenIddict" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="9.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.OpenIddict.Domain" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain" Version="9.1.0" />
+  </ItemGroup>
+
+</Project>

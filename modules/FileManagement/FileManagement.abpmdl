@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FileManagement.Domain.Shared": {
+      "path": "src/FileManagement.Domain.Shared/FileManagement.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.Domain": {
+      "path": "src/FileManagement.Domain/FileManagement.Domain.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.Application.Contracts": {
+      "path": "src/FileManagement.Application.Contracts/FileManagement.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.Application": {
+      "path": "src/FileManagement.Application/FileManagement.Application.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.EntityFrameworkCore": {
+      "path": "src/FileManagement.EntityFrameworkCore/FileManagement.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.MongoDB": {
+      "path": "src/FileManagement.MongoDB/FileManagement.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.HttpApi": {
+      "path": "src/FileManagement.HttpApi/FileManagement.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.HttpApi.Client": {
+      "path": "src/FileManagement.HttpApi.Client/FileManagement.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.TestBase": {
+      "path": "test/FileManagement.TestBase/FileManagement.TestBase.abppkg",
+      "folder": "test"
+    },
+    "FileManagement.EntityFrameworkCore.Tests": {
+      "path": "test/FileManagement.EntityFrameworkCore.Tests/FileManagement.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "FileManagement.MongoDB.Tests": {
+      "path": "test/FileManagement.MongoDB.Tests/FileManagement.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "FileManagement.Domain.Tests": {
+      "path": "test/FileManagement.Domain.Tests/FileManagement.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "FileManagement.Application.Tests": {
+      "path": "test/FileManagement.Application.Tests/FileManagement.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "FileManagement.HttpApi.Host": {
+      "path": "host/FileManagement.HttpApi.Host/FileManagement.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "FileManagement.Web": {
+      "path": "src/FileManagement.Web/FileManagement.Web.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FileManagement.HttpApi.Client.ConsoleTestApp/FileManagement.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "FileManagement.Web.Host": {
+      "path": "host/FileManagement.Web.Host/FileManagement.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "FileManagement.AuthServer": {
+      "path": "host/FileManagement.AuthServer/FileManagement.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "FileManagement.Host.Shared": {
+      "path": "host/FileManagement.Host.Shared/FileManagement.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "FileManagement.Web.Unified": {
+      "path": "host/FileManagement.Web.Unified/FileManagement.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "FileManagement.Blazor": {
+      "path": "src/FileManagement.Blazor/FileManagement.Blazor.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.Blazor.Host": {
+      "path": "host/FileManagement.Blazor.Host/FileManagement.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "FileManagement.Blazor.Server": {
+      "path": "src/FileManagement.Blazor.Server/FileManagement.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.Blazor.WebAssembly": {
+      "path": "src/FileManagement.Blazor.WebAssembly/FileManagement.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "FileManagement.Blazor.Server.Host": {
+      "path": "host/FileManagement.Blazor.Server.Host/FileManagement.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}

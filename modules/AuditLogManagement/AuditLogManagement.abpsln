@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "AuditLogManagement": {
+      "path": "AuditLogManagement.abpmdl"
+    }
+  }
+}

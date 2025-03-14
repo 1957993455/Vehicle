@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FileManagement": {
+      "path": "FileManagement.abpmdl"
+    }
+  }
+}

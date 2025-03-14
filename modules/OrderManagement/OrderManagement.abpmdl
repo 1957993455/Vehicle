@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "OrderManagement.Domain.Shared": {
+      "path": "src/OrderManagement.Domain.Shared/OrderManagement.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.Domain": {
+      "path": "src/OrderManagement.Domain/OrderManagement.Domain.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.Application.Contracts": {
+      "path": "src/OrderManagement.Application.Contracts/OrderManagement.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.Application": {
+      "path": "src/OrderManagement.Application/OrderManagement.Application.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.EntityFrameworkCore": {
+      "path": "src/OrderManagement.EntityFrameworkCore/OrderManagement.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.MongoDB": {
+      "path": "src/OrderManagement.MongoDB/OrderManagement.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.HttpApi": {
+      "path": "src/OrderManagement.HttpApi/OrderManagement.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.HttpApi.Client": {
+      "path": "src/OrderManagement.HttpApi.Client/OrderManagement.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.TestBase": {
+      "path": "test/OrderManagement.TestBase/OrderManagement.TestBase.abppkg",
+      "folder": "test"
+    },
+    "OrderManagement.EntityFrameworkCore.Tests": {
+      "path": "test/OrderManagement.EntityFrameworkCore.Tests/OrderManagement.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "OrderManagement.MongoDB.Tests": {
+      "path": "test/OrderManagement.MongoDB.Tests/OrderManagement.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "OrderManagement.Domain.Tests": {
+      "path": "test/OrderManagement.Domain.Tests/OrderManagement.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "OrderManagement.Application.Tests": {
+      "path": "test/OrderManagement.Application.Tests/OrderManagement.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "OrderManagement.HttpApi.Host": {
+      "path": "host/OrderManagement.HttpApi.Host/OrderManagement.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "OrderManagement.Web": {
+      "path": "src/OrderManagement.Web/OrderManagement.Web.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/OrderManagement.HttpApi.Client.ConsoleTestApp/OrderManagement.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "OrderManagement.Web.Host": {
+      "path": "host/OrderManagement.Web.Host/OrderManagement.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "OrderManagement.AuthServer": {
+      "path": "host/OrderManagement.AuthServer/OrderManagement.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "OrderManagement.Host.Shared": {
+      "path": "host/OrderManagement.Host.Shared/OrderManagement.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "OrderManagement.Web.Unified": {
+      "path": "host/OrderManagement.Web.Unified/OrderManagement.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "OrderManagement.Blazor": {
+      "path": "src/OrderManagement.Blazor/OrderManagement.Blazor.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.Blazor.Host": {
+      "path": "host/OrderManagement.Blazor.Host/OrderManagement.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "OrderManagement.Blazor.Server": {
+      "path": "src/OrderManagement.Blazor.Server/OrderManagement.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.Blazor.WebAssembly": {
+      "path": "src/OrderManagement.Blazor.WebAssembly/OrderManagement.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "OrderManagement.Blazor.Server.Host": {
+      "path": "host/OrderManagement.Blazor.Server.Host/OrderManagement.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}
