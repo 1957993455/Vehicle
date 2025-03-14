@@ -37,6 +37,10 @@
     "Unspecified": "System",
     "SeeAllUsers": "查看所有用户",
     "TakePhoto": "拍摄照片",
-    "ChoosePhoto": "选择照片"
+    "ChoosePhoto": "选择照片",
+    "Permission:Organization": "组织",
+    "Permission:Organization.Create": "创建组织",
+    "Permission:Organization.Update": "更新组织",
+    "Permission:Organization.Delete": "删除组织"
   }
 }

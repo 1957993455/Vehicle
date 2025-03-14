@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Vehicle.App.Identity;
+using Vehicle.App.Identity.Enums;
 using Volo.Abp.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
@@ -16,29 +18,42 @@ public static class AppEfCoreEntityExtensionMappings
 
         OneTimeRunner.Run(() =>
         {
-                /* You can configure extra properties for the
-                 * entities defined in the modules used by your application.
-                 *
-                 * This class can be used to map these extra properties to table fields in the database.
-                 *
-                 * USE THIS CLASS ONLY TO CONFIGURE EF CORE RELATED MAPPING.
-                 * USE AppModuleExtensionConfigurator CLASS (in the Domain.Shared project)
-                 * FOR A HIGH LEVEL API TO DEFINE EXTRA PROPERTIES TO ENTITIES OF THE USED MODULES
-                 *
-                 * Example: Map a property to a table field:
+                //添加用户拓展属性
+                ObjectExtensionManager.Instance
+                    .MapEfCoreProperty<IdentityUser, string?>(
+                        IdentityConst.User.realName,
+                        (entityBuilder, propertyBuilder) =>
+                        {
+                            propertyBuilder.HasMaxLength(128);
+                        }
+                    )
+                    .MapEfCoreProperty<IdentityUser, string?>(
+                    IdentityConst.User.avatar, (entityBuilder, propertyBuilder) =>
+                    {
+                    })
+                    .MapEfCoreProperty<IdentityUser, SexEnum?>(
+                    IdentityConst.User.sex, (entityBuilder, propertyBuilder) => { })
+                    .MapEfCoreProperty<IdentityUser, string?>(IdentityConst.User.idCardNo, (e, p) =>
+                    {
+                    })
+                    .MapEfCoreProperty<IdentityUser, bool?>(IdentityConst.User.isVerified, (e, p) => { })
+                    .MapEfCoreProperty<IdentityUser, int?>(IdentityConst.User.age, (e, p) => { })
+                    .MapEfCoreProperty<IdentityUser, string?>(IdentityConst.User.address, (e, p) => { })
+                    .MapEfCoreProperty<IdentityUser, string?>(IdentityConst.User.country, (e, p) => { })
+                    .MapEfCoreProperty<IdentityUser, string?>(IdentityConst.User.area, (e, p) => { })
+                    .MapEfCoreProperty<IdentityUser, string?>(IdentityConst.User.description, (e, p) => { })
+                    .MapEfCoreProperty<IdentityUser, string?>(IdentityConst.WeChat.wxOpenId, (e, p) => { })
+                    .MapEfCoreProperty<IdentityUser, string?>(IdentityConst.WeChat.wxUnionId, (e, p) => { });
 
-                     ObjectExtensionManager.Instance
-                         .MapEfCoreProperty<IdentityUser, string>(
-                             "MyProperty",
-                             (entityBuilder, propertyBuilder) =>
-                             {
-                                 propertyBuilder.HasMaxLength(128);
-                             }
-                         );
-
-                 * See the documentation for more:
-                 * https://docs.abp.io/en/abp/latest/Customizing-Application-Modules-Extending-Entities
-                 */
+                //添加角色拓展属性
+                ObjectExtensionManager.Instance
+                    .MapEfCoreProperty<IdentityRole, string?>(
+                        IdentityConst.Role.displayName,
+                        (entityBuilder, propertyBuilder) =>
+                        {
+                            propertyBuilder.HasMaxLength(256);
+                        }
+                    );
         });
     }
 }

@@ -113,7 +113,7 @@ public class AppHttpApiHostModule : AbpModule
         ConfigureAuthentication(context);
         ConfigureUrls(configuration);
         ConfigureBundles();
-        ConfigureConventionalControllers();
+        //ConfigureConventionalControllers();
         ConfigureHealthChecks(context);
         ConfigureSwagger(context, configuration);
         ConfigureVirtualFileSystem(context);

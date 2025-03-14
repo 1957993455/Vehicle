@@ -300,6 +300,10 @@ namespace Vehicle.App.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("CreationTime");
 
+                    b.Property<string>("DisplayName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
                     b.Property<int>("EntityVersion")
                         .HasColumnType("int");
 
@@ -511,12 +515,27 @@ namespace Vehicle.App.Migrations
                         .HasDefaultValue(0)
                         .HasColumnName("AccessFailedCount");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Area")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Avatar")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2")
@@ -533,6 +552,9 @@ namespace Vehicle.App.Migrations
                     b.Property<DateTime?>("DeletionTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -554,6 +576,9 @@ namespace Vehicle.App.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
+                    b.Property<string>("IDCardNo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit")
                         .HasColumnName("IsActive");
@@ -569,6 +594,9 @@ namespace Vehicle.App.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false)
                         .HasColumnName("IsExternal");
+
+                    b.Property<bool?>("IsVerified")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
@@ -623,11 +651,18 @@ namespace Vehicle.App.Migrations
                         .HasDefaultValue(false)
                         .HasColumnName("PhoneNumberConfirmed");
 
+                    b.Property<string>("RealName")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
                     b.Property<string>("SecurityStamp")
                         .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("SecurityStamp");
+
+                    b.Property<int?>("Sex")
+                        .HasColumnType("int");
 
                     b.Property<bool>("ShouldChangePasswordOnNextLogin")
                         .HasColumnType("bit");
@@ -652,6 +687,12 @@ namespace Vehicle.App.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("UserName");
+
+                    b.Property<string>("WxOpenId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WxUnionId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

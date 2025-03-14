@@ -28,10 +28,6 @@ public class ClientDemoService : ITransientDependency
         await TestAllManuallyAsync();
     }
 
-    /* Shows how to perform an HTTP request to the API using ABP's dynamic c# proxy
-     * feature. It is just simple as calling a local service method.
-     * Authorization and HTTP request details are handled by the ABP framework.
-     */
     private async Task TestWithDynamicProxiesAsync()
     {
         await Task.CompletedTask;
@@ -40,15 +36,10 @@ public class ClientDemoService : ITransientDependency
 
     }
 
-    /* Shows how to use HttpClient to perform a request to the HTTP API.
-     * It uses ABP's IIdentityModelAuthenticationService to simplify obtaining access tokens.
-     */
     private async Task TestWithHttpClientAndIdentityModelAuthenticationServiceAsync()
     {
         Console.WriteLine();
         Console.WriteLine($"***** {nameof(TestWithHttpClientAndIdentityModelAuthenticationServiceAsync)} *****");
-
-        //Get access token using ABP's IIdentityModelAuthenticationService
 
         var accessToken = await _authenticationService.GetAccessTokenAsync(
             new IdentityClientConfiguration(

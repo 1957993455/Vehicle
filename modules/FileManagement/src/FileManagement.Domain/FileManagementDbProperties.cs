@@ -1,4 +1,5 @@
-﻿namespace FileManagement;
+﻿
+namespace FileManagement;
 
 public static class FileManagementDbProperties
 {

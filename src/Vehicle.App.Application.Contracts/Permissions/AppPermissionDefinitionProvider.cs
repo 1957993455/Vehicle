@@ -11,8 +11,27 @@ public class AppPermissionDefinitionProvider : PermissionDefinitionProvider
     {
         var myGroup = context.AddGroup(AppPermissions.GroupName);
 
-        //Define your own permissions here. Example:
-        //myGroup.AddPermission(AppPermissions.MyPermission1, L("Permission:MyPermission1"));
+        // 组织分组
+        var orgGroup = context.AddGroup(
+            AppPermissions.Organization.GroupName,
+            L("Permission:OrganizationManagement"));
+
+        var orgPermission = orgGroup.AddPermission(
+            AppPermissions.Organization.Default,
+            L("Permission:Organization"));
+
+        orgPermission.AddChild(
+            AppPermissions.Organization.Create,
+            L("Permission:Organization.Create"));
+        orgPermission.AddChild(
+            AppPermissions.Organization.Update,
+            L("Permission:Organization.Update"));
+        orgPermission.AddChild(
+            AppPermissions.Organization.Delete,
+            L("Permission:Organization.Delete"));
+        orgPermission.AddChild(
+            AppPermissions.Organization.ManageMembers,
+            L("Permission:Organization.ManageMembers"));
     }
 
     private static LocalizableString L(string name)

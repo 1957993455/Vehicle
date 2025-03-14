@@ -4,6 +4,11 @@
     "AppName": "App",
     "Menu:Home": "Home",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit",
-    "Welcome": "Welcome"
+    "Welcome": "Welcome",
+    "Permission:Organization": "Organization",
+    "Permission:Organization.Create": "Create Organization",
+    "Permission:Organization.Update": "Update Organization",
+    "Permission:Organization.Delete": "Delete Organization",
+    "Permission:Organization.ManageMembers": "Manage Members"
   }
 }

@@ -1,3 +1,5 @@
+using System;
+using Vehicle.App.Identity;
 using Volo.Abp.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
@@ -12,17 +14,32 @@ public static class AppDtoExtensions
     {
         OneTimeRunner.Run(() =>
         {
-                /* You can add extension properties to DTOs
-                 * defined in the depended modules.
-                 *
-                 * Example:
-                 *
-                 * ObjectExtensionManager.Instance
-                 *   .AddOrUpdateProperty<IdentityRoleDto, string>("Title");
-                 *
-                 * See the documentation for more:
-                 * https://docs.abp.io/en/abp/latest/Object-Extensions
-                 */
+            ObjectExtensionManager.Instance
+           .AddOrUpdateProperty<IdentityUserDto, string>(
+                      IdentityConst.User.avatar.ToCamelCase()
+            )
+           .AddOrUpdateProperty<IdentityUserDto, string>(
+                      IdentityConst.User.realName.ToCamelCase()
+            )
+           .AddOrUpdateProperty<IdentityUserDto, string>(
+                      IdentityConst.User.age.ToCamelCase()
+            )
+           .AddOrUpdateProperty<IdentityUserDto, string>(
+                      IdentityConst.User.area.ToCamelCase()
+            )
+           .AddOrUpdateProperty<IdentityUserDto, string>(
+                      IdentityConst.User.description.ToCamelCase()
+            )
+           .AddOrUpdateProperty<IdentityUserDto, bool>(
+                      IdentityConst.User.idCardNo.ToCamelCase()
+            );
+            ObjectExtensionManager.Instance
+                    .AddOrUpdateProperty<GetIdentityUsersInput, Guid?>(
+                        "OrganizationUnitId"
+                    )
+                    .AddOrUpdateProperty<GetIdentityUsersInput, string?>(
+                        "OrganizationUnitName"
+                    );
         });
     }
 }
