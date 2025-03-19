@@ -1,7 +1,0 @@
-{
-  "modules": {
-    "VehicleManagement": {
-      "path": "VehicleManagement.abpmdl"
-    }
-  }
-}

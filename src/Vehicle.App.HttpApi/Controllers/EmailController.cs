@@ -1,9 +1,8 @@
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using Vehicle.App.Sms;
 using Volo.Abp;
-using Volo.Abp.Settings;
 
 namespace Vehicle.App.Controllers;
 

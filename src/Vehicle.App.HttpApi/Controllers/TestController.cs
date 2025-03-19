@@ -1,6 +1,5 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Caching;
@@ -23,7 +22,7 @@ public class TestController : AppController
     {
         await Cache.SetAsync("abpp_test", "abp");
         await Task.Delay(1000);
-       var res= await Cache.GetAsync("abpp_test");
+        var res = await Cache.GetAsync("abpp_test");
         return "abp";
     }
 }

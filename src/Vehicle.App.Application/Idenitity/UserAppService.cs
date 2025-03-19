@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +19,7 @@ namespace Vehicle.App.Idenitity
     public class UserAppService(
         IRepository<IdentityUser, Guid> userRepository,
         CurrentUser currentUser,
-        UserManager<IdentityUser> userManager) :ApplicationService, IUserAppService
+        UserManager<IdentityUser> userManager) : ApplicationService, IUserAppService
     {
 
         [UnitOfWork]

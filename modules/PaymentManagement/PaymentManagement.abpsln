@@ -1,7 +1,0 @@
-{
-  "modules": {
-    "PaymentManagement": {
-      "path": "PaymentManagement.abpmdl"
-    }
-  }
-}

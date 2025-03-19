@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Vehicle.App.Identity
+﻿namespace Vehicle.App.Identity
 {
     public static class IdentityConst
     {
         public class WeChat
         {
-            public static string wxOpenId =nameof(wxOpenId);
-            public static string wxUnionId =nameof(wxUnionId);
+            public static string wxOpenId = nameof(wxOpenId);
+            public static string wxUnionId = nameof(wxUnionId);
         }
         public class User
         {

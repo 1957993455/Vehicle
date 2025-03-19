@@ -14,7 +14,7 @@
     <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="9.1.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="9.1.0" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="9.1.0" />
-    <PackageReference Include="Volo.Abp.GlobalFeatures" Version="9.1.0" /><ProjectReference Include="..\..\modules\VehicleManagement\src\VehicleManagement.Domain.Shared\VehicleManagement.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\OrderManagement\src\OrderManagement.Domain.Shared\OrderManagement.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\PaymentManagement\src\PaymentManagement.Domain.Shared\PaymentManagement.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.Domain.Shared\AuditLogManagement.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.Domain.Shared\FileManagement.Domain.Shared.csproj" /></ItemGroup>
+    <PackageReference Include="Volo.Abp.GlobalFeatures" Version="9.1.0" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.Domain.Shared\AuditLogManagement.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.Domain.Shared\FileManagement.Domain.Shared.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.OpenIddict.Domain.Shared" Version="9.1.0" />

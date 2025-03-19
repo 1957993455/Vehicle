@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Vehicle.App.Organization.Dtos;
 using Volo.Abp.Application.Services;
-using Volo.Abp.DependencyInjection;
 
 namespace Vehicle.App.Organization
 {

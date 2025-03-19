@@ -16,9 +16,9 @@ public class AuditLogManagementEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<AuditLogManagementDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            /* Add custom repositories here. Example:
+             * options.AddRepository<Question, EfCoreQuestionRepository>();
+             */
         });
     }
 }

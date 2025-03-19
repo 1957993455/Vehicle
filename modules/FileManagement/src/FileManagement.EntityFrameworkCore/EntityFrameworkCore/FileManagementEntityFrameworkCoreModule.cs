@@ -16,9 +16,9 @@ public class FileManagementEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<FileManagementDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            /* Add custom repositories here. Example:
+             * options.AddRepository<Question, EfCoreQuestionRepository>();
+             */
         });
     }
 }

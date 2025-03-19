@@ -1,6 +1,4 @@
-﻿using Volo.Abp;
-
-namespace Vehicle.App.EntityFrameworkCore;
+﻿namespace Vehicle.App.EntityFrameworkCore;
 
 public abstract class AppEntityFrameworkCoreTestBase : AppTestBase<AppEntityFrameworkCoreTestModule>
 {

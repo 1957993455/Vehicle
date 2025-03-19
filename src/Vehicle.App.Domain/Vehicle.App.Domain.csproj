@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\framework\Vehicle.Cache.Redis\Vehicle.Cache.Redis.csproj" />
     <ProjectReference Include="..\..\framework\Vehicle.Core\Vehicle.Core.csproj" />
-    <ProjectReference Include="..\Vehicle.App.Domain.Shared\Vehicle.App.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\VehicleManagement\src\VehicleManagement.Domain\VehicleManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\OrderManagement\src\OrderManagement.Domain\OrderManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\PaymentManagement\src\PaymentManagement.Domain\PaymentManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.Domain\AuditLogManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.Domain\FileManagement.Domain.csproj" /></ItemGroup>
+    <ProjectReference Include="..\Vehicle.App.Domain.Shared\Vehicle.App.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.Domain\AuditLogManagement.Domain.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.Domain\FileManagement.Domain.csproj" /></ItemGroup>
   <ItemGroup>
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="9.1.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.OpenIddict" Version="9.1.0" />

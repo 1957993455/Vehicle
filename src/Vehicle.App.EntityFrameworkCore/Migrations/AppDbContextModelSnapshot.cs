@@ -24,6 +24,947 @@ namespace Vehicle.App.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Vehicle.App.Order.OrderAggregateRoot", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("客户ID");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<int>("PaymentMethod")
+                        .HasColumnType("int")
+                        .HasComment("支付方式");
+
+                    b.Property<int>("PaymentStatus")
+                        .HasColumnType("int")
+                        .HasComment("支付状态");
+
+                    b.Property<DateTime?>("PickupTime")
+                        .HasColumnType("datetime2")
+                        .HasComment("预约取车时间");
+
+                    b.Property<string>("Remarks")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)")
+                        .HasComment("订单备注");
+
+                    b.Property<DateTime?>("ReturnTime")
+                        .HasColumnType("datetime2")
+                        .HasComment("预约还车时间");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int")
+                        .HasComment("订单状态");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("订单总金额");
+
+                    b.Property<Guid>("VehicleId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("车辆ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId")
+                        .HasDatabaseName("IX_Order_CustomerId");
+
+                    b.HasIndex("PaymentStatus")
+                        .HasDatabaseName("IX_Order_PaymentStatus");
+
+                    b.HasIndex("PickupTime")
+                        .HasDatabaseName("IX_Order_PickupTime");
+
+                    b.HasIndex("Status")
+                        .HasDatabaseName("IX_Order_Status");
+
+                    b.HasIndex("VehicleId")
+                        .HasDatabaseName("IX_Order_VehicleId");
+
+                    b.HasIndex("CustomerId", "Status")
+                        .HasDatabaseName("IX_Order_CustomerId_Status");
+
+                    b.HasIndex("VehicleId", "Status")
+                        .HasDatabaseName("IX_Order_VehicleId_Status");
+
+                    b.ToTable("Orders", null, t =>
+                        {
+                            t.HasComment("订单信息");
+                        });
+                });
+
+            modelBuilder.Entity("Vehicle.App.Order.OrderDetailEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("ActualAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("实际金额");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasComment("描述");
+
+                    b.Property<decimal>("DiscountAmount")
+                        .ValueGeneratedOnAdd()
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasDefaultValue(0m)
+                        .HasComment("折扣金额");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<string>("ItemName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasComment("项目名称");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("订单ID");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int")
+                        .HasComment("数量");
+
+                    b.Property<int>("Sort")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0)
+                        .HasComment("排序");
+
+                    b.Property<decimal>("SubTotal")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("小计金额");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("单价");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId")
+                        .HasDatabaseName("IX_OrderDetail_OrderId");
+
+                    b.HasIndex("OrderId", "Sort")
+                        .HasDatabaseName("IX_OrderDetail_OrderId_Sort");
+
+                    b.ToTable("OrderDetails", null, t =>
+                        {
+                            t.HasComment("订单明细");
+                        });
+                });
+
+            modelBuilder.Entity("Vehicle.App.Store.StoreAggregateRoot", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BusinessHours")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)")
+                        .HasComment("门店描述");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("ManagerId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("店长用户ID");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasComment("门店名称");
+
+                    b.Property<Guid>("RegionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("所属区域ID");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int")
+                        .HasComment("门店状态");
+
+                    b.Property<string>("StoreCode")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasComment("门店编码");
+
+                    b.Property<string>("Tags")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)")
+                        .HasComment("门店标签");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RegionId")
+                        .HasDatabaseName("IX_Store_RegionId");
+
+                    b.HasIndex("StoreCode")
+                        .IsUnique()
+                        .HasDatabaseName("UK_Store_Code");
+
+                    b.ToTable("Stores", null, t =>
+                        {
+                            t.HasComment("门店信息表");
+                        });
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.AccidentRecordEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AccidentDate")
+                        .HasColumnType("datetime2")
+                        .HasComment("事故发生日期");
+
+                    b.Property<string>("AccidentLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ClaimStatus")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)")
+                        .HasComment("事故描述");
+
+                    b.Property<Guid>("DriverId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DriverLicenseType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("DriverViolation")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("EndTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("HandlingDepartment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InsuranceCompany")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InsurancePolicyNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<decimal>("RepairCost")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("维修费用");
+
+                    b.Property<DateTime>("ReportDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("VehicleAggregateRootId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("VehicleId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("所属车辆ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccidentDate")
+                        .HasDatabaseName("IX_AccidentRecord_Date");
+
+                    b.HasIndex("VehicleAggregateRootId");
+
+                    b.HasIndex("VehicleId")
+                        .HasDatabaseName("IX_AccidentRecord_VehicleId");
+
+                    b.ToTable("VehicleAccidentRecords", null, t =>
+                        {
+                            t.HasComment("车辆事故记录");
+                        });
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.MaintenanceRecordEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Cost")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("维护费用");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)")
+                        .HasComment("维护项目描述");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<Guid>("VehicleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreationTime")
+                        .HasDatabaseName("IX_MaintenanceRecord_CreationTime");
+
+                    b.HasIndex("VehicleId")
+                        .HasDatabaseName("IX_MaintenanceRecord_VehicleId");
+
+                    b.ToTable("VehicleMaintenanceRecords", null, t =>
+                        {
+                            t.HasComment("车辆维护记录");
+                        });
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.VehicleAggregateRoot", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<int>("EngineType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<int>("FuelType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("LicensePlate")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Mileage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("OwnerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("StoreId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("TransmissionType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VIN")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasMaxLength(4)
+                        .HasColumnType("nvarchar(4)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Vehicle", (string)null);
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.VehiclePurchaseRecordEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasComment("支付方式");
+
+                    b.Property<DateTime>("PurchaseDate")
+                        .HasColumnType("datetime2")
+                        .HasComment("购买日期");
+
+                    b.Property<decimal>("PurchasePrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)")
+                        .HasComment("购买价格");
+
+                    b.Property<string>("Remarks")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasComment("备注");
+
+                    b.Property<string>("SupplierName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasComment("供应商名称");
+
+                    b.Property<string>("SupplierPhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)")
+                        .HasComment("供应商电话");
+
+                    b.Property<Guid?>("VehicleAggregateRootId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("VehicleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VehicleAggregateRootId");
+
+                    b.HasIndex("VehicleId")
+                        .HasDatabaseName("IX_VehiclePurchaseRecord_VehicleId");
+
+                    b.ToTable("VehiclePurchaseRecords", null, t =>
+                        {
+                            t.HasComment("车辆购买记录");
+                        });
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ApplicationName")
+                        .HasMaxLength(96)
+                        .HasColumnType("nvarchar(96)")
+                        .HasColumnName("ApplicationName");
+
+                    b.Property<string>("BrowserInfo")
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)")
+                        .HasColumnName("BrowserInfo");
+
+                    b.Property<string>("ClientId")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("ClientId");
+
+                    b.Property<string>("ClientIpAddress")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("ClientIpAddress");
+
+                    b.Property<string>("ClientName")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)")
+                        .HasColumnName("ClientName");
+
+                    b.Property<string>("Comments")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("Comments");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<string>("CorrelationId")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("CorrelationId");
+
+                    b.Property<string>("Exceptions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExecutionDuration")
+                        .HasColumnType("int")
+                        .HasColumnName("ExecutionDuration");
+
+                    b.Property<DateTime>("ExecutionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("HttpMethod")
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)")
+                        .HasColumnName("HttpMethod");
+
+                    b.Property<int?>("HttpStatusCode")
+                        .HasColumnType("int")
+                        .HasColumnName("HttpStatusCode");
+
+                    b.Property<Guid?>("ImpersonatorTenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ImpersonatorTenantId");
+
+                    b.Property<string>("ImpersonatorTenantName")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("ImpersonatorTenantName");
+
+                    b.Property<Guid?>("ImpersonatorUserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ImpersonatorUserId");
+
+                    b.Property<string>("ImpersonatorUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("ImpersonatorUserName");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.Property<string>("TenantName")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("TenantName");
+
+                    b.Property<string>("Url")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("Url");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("UserId");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("UserName");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "ExecutionTime");
+
+                    b.HasIndex("TenantId", "UserId", "ExecutionTime");
+
+                    b.ToTable("AbpAuditLogs", (string)null);
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AuditLogId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("AuditLogId");
+
+                    b.Property<int>("ExecutionDuration")
+                        .HasColumnType("int")
+                        .HasColumnName("ExecutionDuration");
+
+                    b.Property<DateTime>("ExecutionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("ExecutionTime");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<string>("MethodName")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)")
+                        .HasColumnName("MethodName");
+
+                    b.Property<string>("Parameters")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)")
+                        .HasColumnName("Parameters");
+
+                    b.Property<string>("ServiceName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("ServiceName");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuditLogId");
+
+                    b.HasIndex("TenantId", "ServiceName", "MethodName", "ExecutionTime");
+
+                    b.ToTable("AbpAuditLogActions", (string)null);
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.EntityChange", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AuditLogId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("AuditLogId");
+
+                    b.Property<DateTime>("ChangeTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("ChangeTime");
+
+                    b.Property<byte>("ChangeType")
+                        .HasColumnType("tinyint")
+                        .HasColumnName("ChangeType");
+
+                    b.Property<string>("EntityId")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)")
+                        .HasColumnName("EntityId");
+
+                    b.Property<Guid?>("EntityTenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("EntityTypeFullName")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)")
+                        .HasColumnName("EntityTypeFullName");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuditLogId");
+
+                    b.HasIndex("TenantId", "EntityTypeFullName", "EntityId");
+
+                    b.ToTable("AbpEntityChanges", (string)null);
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.EntityPropertyChange", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("EntityChangeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("NewValue")
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)")
+                        .HasColumnName("NewValue");
+
+                    b.Property<string>("OriginalValue")
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)")
+                        .HasColumnName("OriginalValue");
+
+                    b.Property<string>("PropertyName")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)")
+                        .HasColumnName("PropertyName");
+
+                    b.Property<string>("PropertyTypeFullName")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnName("PropertyTypeFullName");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntityChangeId");
+
+                    b.ToTable("AbpEntityPropertyChanges", (string)null);
+                });
+
             modelBuilder.Entity("Volo.Abp.BackgroundJobs.BackgroundJobRecord", b =>
                 {
                     b.Property<Guid>("Id")
@@ -300,10 +1241,6 @@ namespace Vehicle.App.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("CreationTime");
 
-                    b.Property<string>("DisplayName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
                     b.Property<int>("EntityVersion")
                         .HasColumnType("int");
 
@@ -337,6 +1274,10 @@ namespace Vehicle.App.Migrations
                     b.Property<Guid?>("TenantId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("TenantId");
+
+                    b.Property<string>("displayName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
@@ -515,27 +1456,12 @@ namespace Vehicle.App.Migrations
                         .HasDefaultValue(0)
                         .HasColumnName("AccessFailedCount");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Area")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Avatar")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)")
                         .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2")
@@ -552,9 +1478,6 @@ namespace Vehicle.App.Migrations
                     b.Property<DateTime?>("DeletionTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletionTime");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -576,9 +1499,6 @@ namespace Vehicle.App.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<string>("IDCardNo")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit")
                         .HasColumnName("IsActive");
@@ -594,9 +1514,6 @@ namespace Vehicle.App.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false)
                         .HasColumnName("IsExternal");
-
-                    b.Property<bool?>("IsVerified")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
@@ -651,18 +1568,11 @@ namespace Vehicle.App.Migrations
                         .HasDefaultValue(false)
                         .HasColumnName("PhoneNumberConfirmed");
 
-                    b.Property<string>("RealName")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
-
                     b.Property<string>("SecurityStamp")
                         .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("SecurityStamp");
-
-                    b.Property<int?>("Sex")
-                        .HasColumnType("int");
 
                     b.Property<bool>("ShouldChangePasswordOnNextLogin")
                         .HasColumnType("bit");
@@ -688,10 +1598,41 @@ namespace Vehicle.App.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("UserName");
 
-                    b.Property<string>("WxOpenId")
+                    b.Property<string>("address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WxUnionId")
+                    b.Property<int?>("age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("area")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("avatar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("idCardNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("isVerified")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("realName")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<int?>("sex")
+                        .HasColumnType("int");
+
+                    b.Property<string>("wxOpenId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("wxUnionId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -1550,6 +2491,191 @@ namespace Vehicle.App.Migrations
                     b.ToTable("AbpTenantConnectionStrings", (string)null);
                 });
 
+            modelBuilder.Entity("Vehicle.App.Order.OrderDetailEntity", b =>
+                {
+                    b.HasOne("Vehicle.App.Order.OrderAggregateRoot", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("Vehicle.App.Store.StoreAggregateRoot", b =>
+                {
+                    b.OwnsOne("Vehicle.App.Store.GeoLocationValueObject", "Location", b1 =>
+                        {
+                            b1.Property<Guid>("StoreAggregateRootId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<double>("Latitude")
+                                .HasPrecision(8, 6)
+                                .HasColumnType("float(8)")
+                                .HasComment("纬度");
+
+                            b1.Property<double>("Longitude")
+                                .HasPrecision(9, 6)
+                                .HasColumnType("float(9)")
+                                .HasComment("经度");
+
+                            b1.HasKey("StoreAggregateRootId");
+
+                            b1.HasIndex("Longitude", "Latitude")
+                                .HasDatabaseName("IX_Store_Location");
+
+                            b1.ToTable("Stores");
+
+                            b1.WithOwner()
+                                .HasForeignKey("StoreAggregateRootId");
+                        });
+
+                    b.OwnsOne("Vehicle.App.ValueObjects.AddressValueObject", "Address", b1 =>
+                        {
+                            b1.Property<Guid>("StoreAggregateRootId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("City")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)")
+                                .HasComment("市");
+
+                            b1.Property<string>("Detail")
+                                .IsRequired()
+                                .HasMaxLength(200)
+                                .HasColumnType("nvarchar(200)")
+                                .HasComment("详细地址");
+
+                            b1.Property<string>("District")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)")
+                                .HasComment("区");
+
+                            b1.Property<string>("Province")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)")
+                                .HasComment("省");
+
+                            b1.Property<string>("Street")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)")
+                                .HasComment("街道");
+
+                            b1.HasKey("StoreAggregateRootId");
+
+                            b1.ToTable("Stores");
+
+                            b1.WithOwner()
+                                .HasForeignKey("StoreAggregateRootId");
+                        });
+
+                    b.Navigation("Address")
+                        .IsRequired();
+
+                    b.Navigation("Location")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.AccidentRecordEntity", b =>
+                {
+                    b.HasOne("Vehicle.App.Vehicle.VehicleAggregateRoot", null)
+                        .WithMany("AccidentHistory")
+                        .HasForeignKey("VehicleAggregateRootId");
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.MaintenanceRecordEntity", b =>
+                {
+                    b.HasOne("Vehicle.App.Vehicle.VehicleAggregateRoot", "Vehicle")
+                        .WithMany("MaintenanceRecords")
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Vehicle");
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.VehicleAggregateRoot", b =>
+                {
+                    b.OwnsOne("Vehicle.App.ValueObjects.AddressValueObject", "Address", b1 =>
+                        {
+                            b1.Property<Guid>("VehicleAggregateRootId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("City")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)");
+
+                            b1.Property<string>("Detail")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)");
+
+                            b1.Property<string>("District")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)");
+
+                            b1.Property<string>("Province")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)");
+
+                            b1.Property<string>("Street")
+                                .IsRequired()
+                                .HasMaxLength(100)
+                                .HasColumnType("nvarchar(100)");
+
+                            b1.HasKey("VehicleAggregateRootId");
+
+                            b1.ToTable("Vehicle");
+
+                            b1.WithOwner()
+                                .HasForeignKey("VehicleAggregateRootId");
+                        });
+
+                    b.Navigation("Address")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.VehiclePurchaseRecordEntity", b =>
+                {
+                    b.HasOne("Vehicle.App.Vehicle.VehicleAggregateRoot", null)
+                        .WithMany("Purchases")
+                        .HasForeignKey("VehicleAggregateRootId");
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>
+                {
+                    b.HasOne("Volo.Abp.AuditLogging.AuditLog", null)
+                        .WithMany("Actions")
+                        .HasForeignKey("AuditLogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.EntityChange", b =>
+                {
+                    b.HasOne("Volo.Abp.AuditLogging.AuditLog", null)
+                        .WithMany("EntityChanges")
+                        .HasForeignKey("AuditLogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.EntityPropertyChange", b =>
+                {
+                    b.HasOne("Volo.Abp.AuditLogging.EntityChange", null)
+                        .WithMany("PropertyChanges")
+                        .HasForeignKey("EntityChangeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Volo.Abp.Identity.IdentityRoleClaim", b =>
                 {
                     b.HasOne("Volo.Abp.Identity.IdentityRole", null)
@@ -1663,6 +2789,27 @@ namespace Vehicle.App.Migrations
                         .HasForeignKey("TenantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Vehicle.App.Vehicle.VehicleAggregateRoot", b =>
+                {
+                    b.Navigation("AccidentHistory");
+
+                    b.Navigation("MaintenanceRecords");
+
+                    b.Navigation("Purchases");
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
+                {
+                    b.Navigation("Actions");
+
+                    b.Navigation("EntityChanges");
+                });
+
+            modelBuilder.Entity("Volo.Abp.AuditLogging.EntityChange", b =>
+                {
+                    b.Navigation("PropertyChanges");
                 });
 
             modelBuilder.Entity("Volo.Abp.Identity.IdentityRole", b =>

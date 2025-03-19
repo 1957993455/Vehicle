@@ -1,17 +1,17 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
+using Vehicle.App.MultiTenancy;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Identity;
 using Volo.Abp.MultiTenancy;
-using Vehicle.App.MultiTenancy;
 using Volo.Abp.TenantManagement;
 
 namespace Vehicle.App.Data;
@@ -57,7 +57,7 @@ public class AppDbMigrationService : ITransientDependency
 
         if (MultiTenancyConsts.IsEnabled)
         {
-            
+
             var tenants = await _tenantRepository.GetListAsync(includeDetails: true);
 
             var migratedDatabaseSchemas = new HashSet<string>();
@@ -94,7 +94,7 @@ public class AppDbMigrationService : ITransientDependency
     {
         Logger.LogInformation(
             $"Migrating schema for {(tenant == null ? "host" : tenant.Name + " tenant")} database...");
-        
+
         foreach (var migrator in _dbSchemaMigrators)
         {
             await migrator.MigrateAsync();
@@ -104,7 +104,7 @@ public class AppDbMigrationService : ITransientDependency
     private async Task SeedDataAsync(Tenant? tenant = null)
     {
         Logger.LogInformation($"Executing {(tenant == null ? "host" : tenant.Name + " tenant")} database seed...");
-        
+
         await _dataSeeder.SeedAsync(new DataSeedContext(tenant?.Id)
             .WithProperty(IdentityDataSeedContributor.AdminEmailPropertyName,
                 AppConsts.AdminEmailDefaultValue)

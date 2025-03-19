@@ -9,7 +9,6 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
 using Vehicle.App.Openiddict;
-using Volo.Abp.Account;
 using Volo.Abp.Identity;
 using Volo.Abp.OpenIddict;
 using Volo.Abp.OpenIddict.Controllers;

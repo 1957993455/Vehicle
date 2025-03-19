@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.AuditLogging.EntityFrameworkCore;
 
 namespace AuditLogManagement.EntityFrameworkCore;
 
@@ -29,5 +30,9 @@ public static class AuditLogManagementDbContextModelCreatingExtensions
             b.HasIndex(q => q.CreationTime);
         });
         */
+
+        builder.ConfigureAuditLogging();
+
+
     }
 }

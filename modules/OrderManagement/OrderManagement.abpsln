@@ -1,7 +1,0 @@
-{
-  "modules": {
-    "OrderManagement": {
-      "path": "OrderManagement.abpmdl"
-    }
-  }
-}

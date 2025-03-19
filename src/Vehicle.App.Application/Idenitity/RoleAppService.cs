@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Vehicle.App.Identity;
 using Volo.Abp;
@@ -10,7 +7,7 @@ using Volo.Abp.Identity;
 
 namespace Vehicle.App.Idenitity
 {
-    public class RoleAppService :ApplicationService, IRoleAppService
+    public class RoleAppService : ApplicationService, IRoleAppService
     {
 
         protected IIdentityRoleRepository IdentityRoleRepository { get; }

@@ -1,24 +1,21 @@
+using AuditLogManagement.EntityFrameworkCore;
+using FileManagement.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Volo.Abp.AuditLogging.EntityFrameworkCore;
+using Vehicle.App.Order;
+using Vehicle.App.Store;
+using Vehicle.App.Vehicle;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
-using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
+using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
-using VehicleManagement.EntityFrameworkCore;
-using OrderManagement.EntityFrameworkCore;
-using PaymentManagement.EntityFrameworkCore;
-using AuditLogManagement.EntityFrameworkCore;
-using FileManagement.EntityFrameworkCore;
 
 namespace Vehicle.App.EntityFrameworkCore;
 
@@ -31,6 +28,23 @@ public class AppDbContext :
     IIdentityDbContext
 {
     #region Entities from the modules
+
+
+    // 车辆相关
+    public DbSet<VehicleAggregateRoot> Vehicles { get; set; }
+
+    public DbSet<MaintenanceRecordEntity> MaintenanceRecords { get; set; }
+    public DbSet<AccidentRecordEntity> AccidentRecords { get; set; }
+    public DbSet<VehiclePurchaseRecordEntity> PurchaseRecords { get; set; }
+
+    // 订单相关
+    public DbSet<OrderAggregateRoot> Orders { get; set; }
+
+    public DbSet<OrderDetailEntity> OrderDetails { get; set; }
+
+    // 门店相关
+    public DbSet<StoreAggregateRoot> Stores { get; set; }
+
     // Identity
     public DbSet<IdentityUser> Users { get; set; }
     public DbSet<IdentityRole> Roles { get; set; }
@@ -63,10 +77,8 @@ public class AppDbContext :
         builder.ConfigureIdentity();
         builder.ConfigureOpenIddict();
         builder.ConfigureTenantManagement();
-        builder.ConfigureVehicleManagement();
-        builder.ConfigureOrderManagement();
-        builder.ConfigurePaymentManagement();
         builder.ConfigureAuditLogManagement();
         builder.ConfigureFileManagement();
-        }
+        builder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+    }
 }

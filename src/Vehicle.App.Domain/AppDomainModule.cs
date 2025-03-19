@@ -1,28 +1,19 @@
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Vehicle.App.Localization;
+using AuditLogManagement;
+using FileManagement;
 using Vehicle.App.MultiTenancy;
-using Volo.Abp.Localization;
-using Volo.Abp.Modularity;
-using Volo.Abp.MultiTenancy;
-using Volo.Abp.PermissionManagement.Identity;
-using Volo.Abp.SettingManagement;
-using Volo.Abp.BlobStoring.Database;
-using Volo.Abp.Caching;
-using Volo.Abp.OpenIddict;
-using Volo.Abp.PermissionManagement.OpenIddict;
-using Volo.Abp.AuditLogging;
+using Vehicle.Cache.Redis;
+using Vehicle.Core;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
+using Volo.Abp.Localization;
+using Volo.Abp.Modularity;
+using Volo.Abp.MultiTenancy;
+using Volo.Abp.OpenIddict;
+using Volo.Abp.PermissionManagement.Identity;
+using Volo.Abp.PermissionManagement.OpenIddict;
+using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
-using Vehicle.Core;
-using VehicleManagement;
-using OrderManagement;
-using PaymentManagement;
-using AuditLogManagement;
-using FileManagement;
-using Vehicle.Cache.Redis;
 
 namespace Vehicle.App;
 
@@ -38,13 +29,10 @@ namespace Vehicle.App;
     typeof(AbpTenantManagementDomainModule),
     typeof(VehicleCoreModule)
     )]
-[DependsOn(typeof(VehicleManagementDomainModule))]
-[DependsOn(typeof(OrderManagementDomainModule))]
-[DependsOn(typeof(PaymentManagementDomainModule))]
 [DependsOn(typeof(AuditLogManagementDomainModule))]
 [DependsOn(typeof(FileManagementDomainModule))]
 [DependsOn(typeof(VehicleCacheRedisModule))]
-    public class AppDomainModule : AbpModule
+public class AppDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
@@ -74,7 +62,7 @@ namespace Vehicle.App;
             options.Languages.Add(new LanguageInfo("es", "es", "Español"));
             options.Languages.Add(new LanguageInfo("sv", "sv", "Svenska"));
         });
-        
+
 
 
     }

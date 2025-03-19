@@ -1,24 +1,17 @@
-using System;
+using AuditLogManagement.EntityFrameworkCore;
+using FileManagement.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp.Uow;
-using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.Modularity;
+using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
-using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
-using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Volo.Abp.Studio;
-using VehicleManagement.EntityFrameworkCore;
-using OrderManagement.EntityFrameworkCore;
-using PaymentManagement.EntityFrameworkCore;
-using AuditLogManagement.EntityFrameworkCore;
-using FileManagement.EntityFrameworkCore;
+using Volo.Abp.TenantManagement.EntityFrameworkCore;
 
 namespace Vehicle.App.EntityFrameworkCore;
 
@@ -33,12 +26,9 @@ namespace Vehicle.App.EntityFrameworkCore;
     typeof(AbpOpenIddictEntityFrameworkCoreModule),
     typeof(AbpTenantManagementEntityFrameworkCoreModule)
     )]
-    [DependsOn(typeof(VehicleManagementEntityFrameworkCoreModule))]
-    [DependsOn(typeof(OrderManagementEntityFrameworkCoreModule))]
-    [DependsOn(typeof(PaymentManagementEntityFrameworkCoreModule))]
-    [DependsOn(typeof(AuditLogManagementEntityFrameworkCoreModule))]
-    [DependsOn(typeof(FileManagementEntityFrameworkCoreModule))]
-    public class AppEntityFrameworkCoreModule : AbpModule
+[DependsOn(typeof(AuditLogManagementEntityFrameworkCoreModule))]
+[DependsOn(typeof(FileManagementEntityFrameworkCoreModule))]
+public class AppEntityFrameworkCoreModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
@@ -50,8 +40,8 @@ namespace Vehicle.App.EntityFrameworkCore;
     {
         context.Services.AddAbpDbContext<AppDbContext>(options =>
         {
-                /* Remove "includeAllEntities: true" to create
-                 * default repositories only for aggregate roots */
+            /* Remove "includeAllEntities: true" to create
+             * default repositories only for aggregate roots */
             options.AddDefaultRepositories(includeAllEntities: true);
         });
 
@@ -68,6 +58,6 @@ namespace Vehicle.App.EntityFrameworkCore;
             options.UseSqlServer();
 
         });
-        
+
     }
 }

@@ -1,5 +1,4 @@
-﻿using Vehicle.App.EntityFrameworkCore;
-using Xunit;
+﻿using Xunit;
 
 namespace Vehicle.App.EntityFrameworkCore;
 

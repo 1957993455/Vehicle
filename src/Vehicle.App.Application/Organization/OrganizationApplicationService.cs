@@ -32,7 +32,7 @@ public class OrganizationAppService(
                 CreationTime = x.CreationTime,
                 LastModificationTime = x.LastModificationTime,
                 LastModifierId = x.LastModifierId,
-                Children = [] 
+                Children = []
             })
             .ToList();
 
@@ -46,7 +46,7 @@ public class OrganizationAppService(
             {
                 if (dict.TryGetValue(node.ParentId.Value, out var parent))
                 {
-                    parent.Children.Add(node); 
+                    parent.Children.Add(node);
                 }
                 else
                 {

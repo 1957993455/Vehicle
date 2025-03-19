@@ -1,16 +1,13 @@
-using Volo.Abp.PermissionManagement;
-using Volo.Abp.SettingManagement;
-using Volo.Abp.Account;
-using Volo.Abp.Identity;
-using Volo.Abp.AutoMapper;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Modularity;
-using Volo.Abp.TenantManagement;
-using VehicleManagement;
-using OrderManagement;
-using PaymentManagement;
 using AuditLogManagement;
 using FileManagement;
+using Volo.Abp.Account;
+using Volo.Abp.AutoMapper;
+using Volo.Abp.FeatureManagement;
+using Volo.Abp.Identity;
+using Volo.Abp.Modularity;
+using Volo.Abp.PermissionManagement;
+using Volo.Abp.SettingManagement;
+using Volo.Abp.TenantManagement;
 
 namespace Vehicle.App;
 
@@ -24,12 +21,9 @@ namespace Vehicle.App;
     typeof(AbpTenantManagementApplicationModule),
     typeof(AbpSettingManagementApplicationModule)
     )]
-    [DependsOn(typeof(VehicleManagementApplicationModule))]
-    [DependsOn(typeof(OrderManagementApplicationModule))]
-    [DependsOn(typeof(PaymentManagementApplicationModule))]
-    [DependsOn(typeof(AuditLogManagementApplicationModule))]
-    [DependsOn(typeof(FileManagementApplicationModule))]
-    public class AppApplicationModule : AbpModule
+[DependsOn(typeof(AuditLogManagementApplicationModule))]
+[DependsOn(typeof(FileManagementApplicationModule))]
+public class AppApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

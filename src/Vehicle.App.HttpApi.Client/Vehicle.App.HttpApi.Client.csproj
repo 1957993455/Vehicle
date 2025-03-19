@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vehicle.App.Application.Contracts\Vehicle.App.Application.Contracts.csproj" /><ProjectReference Include="..\..\modules\VehicleManagement\src\VehicleManagement.HttpApi.Client\VehicleManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\OrderManagement\src\OrderManagement.HttpApi.Client\OrderManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\PaymentManagement\src\PaymentManagement.HttpApi.Client\PaymentManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.HttpApi.Client\AuditLogManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.HttpApi.Client\FileManagement.HttpApi.Client.csproj" /></ItemGroup>
+    <ProjectReference Include="..\Vehicle.App.Application.Contracts\Vehicle.App.Application.Contracts.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.HttpApi.Client\AuditLogManagement.HttpApi.Client.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.HttpApi.Client\FileManagement.HttpApi.Client.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="9.1.0" />

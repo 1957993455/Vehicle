@@ -6,8 +6,8 @@ using Volo.Abp.Modularity;
 
 namespace Vehicle.Core
 {
-    [DependsOn(typeof(AbpEmailingModule),typeof(AbpCachingModule))]
-    public class VehicleCoreModule: AbpModule
+    [DependsOn(typeof(AbpEmailingModule), typeof(AbpCachingModule))]
+    public class VehicleCoreModule : AbpModule
     {
 
 

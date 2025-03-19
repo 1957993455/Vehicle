@@ -8,7 +8,7 @@ namespace Vehicle.Cache.Redis;
 /// Redis缓存模块
 /// </summary>
 [DependsOn(typeof(AbpCachingStackExchangeRedisModule))]
-public class VehicleCacheRedisModule:AbpModule
+public class VehicleCacheRedisModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

@@ -7,7 +7,6 @@ using Vehicle.App.Identity;
 using Vehicle.App.Identity.Enums;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
-using Volo.Abp.OpenIddict.Controllers;
 using Volo.Abp.Security.Claims;
 
 namespace Vehicle.App.Controller;
@@ -38,7 +37,7 @@ public class UserInfoController : Volo.Abp.OpenIddict.Controllers.UserInfoContro
             claims[OpenIddictConstants.Claims.FamilyName] = user.Surname;
             claims[OpenIddictConstants.Claims.GivenName] = user.Name;
             claims["avatar"] = user.GetProperty<string>(IdentityConst.User.avatar) ?? string.Empty;
-            claims["userId"]= user.Id.ToString();
+            claims["userId"] = user.Id.ToString();
             SexEnum? sex = user.GetProperty<SexEnum?>(IdentityConst.User.sex);
             claims["gender"] = sex is null ? SexEnum.Other.GetDisplayName() : sex.GetDisplayName();
             claims["nickname"] = user.GetProperty<string>(IdentityConst.User.realName) ?? string.Empty;
@@ -52,13 +51,13 @@ public class UserInfoController : Volo.Abp.OpenIddict.Controllers.UserInfoContro
 
         if (User.HasScope(OpenIddictConstants.Scopes.Email))
         {
-            claims[OpenIddictConstants.Claims.Email] = await UserManager.GetEmailAsync(user)?? string.Empty;
+            claims[OpenIddictConstants.Claims.Email] = await UserManager.GetEmailAsync(user) ?? string.Empty;
             claims[OpenIddictConstants.Claims.EmailVerified] = await UserManager.IsEmailConfirmedAsync(user);
         }
 
         if (User.HasScope(OpenIddictConstants.Scopes.Phone))
         {
-            claims[OpenIddictConstants.Claims.PhoneNumber] = await UserManager.GetPhoneNumberAsync(user)?? string.Empty;
+            claims[OpenIddictConstants.Claims.PhoneNumber] = await UserManager.GetPhoneNumberAsync(user) ?? string.Empty;
             claims[OpenIddictConstants.Claims.PhoneNumberVerified] = await UserManager.IsPhoneNumberConfirmedAsync(user);
         }
 

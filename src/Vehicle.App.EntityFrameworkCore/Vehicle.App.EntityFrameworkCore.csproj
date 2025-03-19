@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vehicle.App.Domain\Vehicle.App.Domain.csproj" /><ProjectReference Include="..\..\modules\VehicleManagement\src\VehicleManagement.EntityFrameworkCore\VehicleManagement.EntityFrameworkCore.csproj" /><ProjectReference Include="..\..\modules\OrderManagement\src\OrderManagement.EntityFrameworkCore\OrderManagement.EntityFrameworkCore.csproj" /><ProjectReference Include="..\..\modules\PaymentManagement\src\PaymentManagement.EntityFrameworkCore\PaymentManagement.EntityFrameworkCore.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.EntityFrameworkCore\AuditLogManagement.EntityFrameworkCore.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.EntityFrameworkCore\FileManagement.EntityFrameworkCore.csproj" /></ItemGroup>
+    <ProjectReference Include="..\Vehicle.App.Domain\Vehicle.App.Domain.csproj" /><ProjectReference Include="..\..\modules\AuditLogManagement\src\AuditLogManagement.EntityFrameworkCore\AuditLogManagement.EntityFrameworkCore.csproj" /><ProjectReference Include="..\..\modules\FileManagement\src\FileManagement.EntityFrameworkCore\FileManagement.EntityFrameworkCore.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="9.1.0" />
