@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Domain.Services;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Domain.Vehicle;
 
 /// <summary>
 /// 车辆管理

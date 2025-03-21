@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Vehicle.App.Organization.Dtos;
+using Vehicle.App.Application.Contracts.Organization.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Vehicle.App.Organization
+namespace Vehicle.App.Application.Contracts.Organization
 {
     public interface IOrganizationAppService : ICrudAppService<OrganizationUnitDto, Guid, GetOrganizationUnitInput, CreateOrganizationUnitInput, UpdateOrganizationUnitInput>
     {

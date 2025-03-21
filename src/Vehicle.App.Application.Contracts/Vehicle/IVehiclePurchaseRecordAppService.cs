@@ -1,8 +1,8 @@
 using System;
-using Vehicle.App.Vehicle.Dtos;
+using Vehicle.App.Application.Contracts.Vehicle.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Application.Contracts.Vehicle;
 
 /// <summary>
 /// 车辆购买记录应用服务接口

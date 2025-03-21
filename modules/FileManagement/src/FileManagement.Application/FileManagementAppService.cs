@@ -1,7 +1,7 @@
-﻿using FileManagement.Localization;
+﻿using Vehicle.App.FileManagement.Domain.Shared.Localization;
 using Volo.Abp.Application.Services;
 
-namespace FileManagement;
+namespace Vehicle.App.FileManagement.Application;
 
 public abstract class FileManagementAppService : ApplicationService
 {

@@ -1,4 +1,4 @@
-﻿namespace FileManagement.Settings;
+﻿namespace Vehicle.App.FileManagement.Domain.Settings;
 
 public static class FileManagementSettings
 {

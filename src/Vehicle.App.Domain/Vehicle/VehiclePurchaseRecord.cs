@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Domain.Vehicle;
 
 /// <summary>
 /// 车辆购买记录实体类，用于存储车辆购买的相关信息

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Vehicle.App.Data;
+namespace Vehicle.App.Domain.Data;
 
 public interface IAppDbSchemaMigrator
 {

@@ -3,13 +3,13 @@ using OpenIddict.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.Identity;
-using Vehicle.App.Identity.Enums;
+using Vehicle.App.Domain.Shared.Identity;
+using Vehicle.App.Domain.Shared.Identity.Enums;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Security.Claims;
 
-namespace Vehicle.App.Controller;
+namespace Vehicle.App.HttpApi.Host.Controller;
 
 [Dependency(ReplaceServices = true)]
 [ExposeServices(typeof(Volo.Abp.OpenIddict.Controllers.UserInfoController))]

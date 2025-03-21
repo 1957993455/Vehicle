@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
 
-namespace AuditLogManagement.HttpApi.Client.ConsoleTestApp;
+namespace AuditLogManagement;
 
 class Program
 {

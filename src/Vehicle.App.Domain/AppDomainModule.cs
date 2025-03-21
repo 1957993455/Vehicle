@@ -1,6 +1,7 @@
 using AuditLogManagement;
-using FileManagement;
-using Vehicle.App.MultiTenancy;
+using Vehicle.App.Domain.Shared;
+using Vehicle.App.Domain.Shared.MultiTenancy;
+using Vehicle.App.FileManagement.Domain;
 using Vehicle.Cache.Redis;
 using Vehicle.Core;
 using Volo.Abp.BackgroundJobs;
@@ -13,9 +14,10 @@ using Volo.Abp.OpenIddict;
 using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.OpenIddict;
 using Volo.Abp.SettingManagement;
+using Volo.Abp.Sms.Aliyun;
 using Volo.Abp.TenantManagement;
 
-namespace Vehicle.App;
+namespace Vehicle.App.Domain;
 
 [DependsOn(
     typeof(AppDomainSharedModule),
@@ -27,7 +29,8 @@ namespace Vehicle.App;
     typeof(AbpIdentityDomainModule),
     typeof(AbpOpenIddictDomainModule),
     typeof(AbpTenantManagementDomainModule),
-    typeof(VehicleCoreModule)
+    typeof(VehicleCoreModule),
+    typeof(AbpSmsAliyunModule)
     )]
 [DependsOn(typeof(AuditLogManagementDomainModule))]
 [DependsOn(typeof(FileManagementDomainModule))]
@@ -36,6 +39,10 @@ public class AppDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
+
+        //配置阿里云
+       
+
         Configure<AbpMultiTenancyOptions>(options =>
         {
             options.IsEnabled = MultiTenancyConsts.IsEnabled;

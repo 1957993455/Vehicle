@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.Vehicle.Dtos;
+using Vehicle.App.Application.Contracts.Vehicle.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Application.Contracts.Vehicle;
 
 public interface IMaintenanceRecordAppService : IApplicationService
 {

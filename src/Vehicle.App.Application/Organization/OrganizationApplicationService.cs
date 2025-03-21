@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Vehicle.App.Organization.Dtos;
+using Vehicle.App.Application.Contracts.Organization;
+using Vehicle.App.Application.Contracts.Organization.Dtos;
 using Volo.Abp;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.Organization;
+namespace Vehicle.App.Application.Organization;
 
 public class OrganizationAppService(
     IOrganizationUnitRepository organizationUnitRepository,

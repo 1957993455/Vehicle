@@ -1,4 +1,4 @@
-﻿namespace Vehicle.App.Openiddict;
+﻿namespace Vehicle.App.Domain.Shared.Openiddict;
 
 public static class OpeniddictConst
 {

@@ -2,7 +2,7 @@
 using Volo.Abp.Application.Services;
 using Volo.Abp.DependencyInjection;
 
-namespace Vehicle.App.Account;
+namespace Vehicle.App.Application.Contracts.Account;
 
 public interface IAccountAppService : IApplicationService, ITransientDependency
 {

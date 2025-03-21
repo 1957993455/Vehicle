@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Vehicle.App.Identity;
+using Vehicle.App.Application.Contracts.Identity;
 using Volo.Abp;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.Idenitity
+namespace Vehicle.App.Application.Idenitity
 {
     public class RoleAppService : ApplicationService, IRoleAppService
     {

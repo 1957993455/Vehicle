@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vehicle.App.Enums;
-using Vehicle.App.Vehicle.Dtos;
+using Vehicle.App.Application.Contracts.Vehicle;
+using Vehicle.App.Application.Contracts.Vehicle.Dtos;
+using Vehicle.App.Domain.Shared.Enums;
+using Vehicle.App.Domain.Vehicle;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Uow;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Application.Vehicle;
 
 /// <summary>
 /// ����Ӧ�÷���
@@ -21,8 +23,8 @@ public class VehicleAppService(IRepository<VehicleAggregateRoot, Guid> repositor
         VehicleDto,
         Guid,
         GetListVehicleInput,
-        CreateVehicleDto,
-        UpdateVehicleDto>(repository),
+        CreateVehicleInput,
+        UpdateVehicleInput>(repository),
     IVehicleAppService
 {
     public async Task<VehicleDto> UpdateMileageAsync(Guid id, int newMileage)

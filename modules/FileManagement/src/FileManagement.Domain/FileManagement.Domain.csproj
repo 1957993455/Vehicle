@@ -5,12 +5,14 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <RootNamespace>FileManagement</RootNamespace>
+    <RootNamespace>Vehicle.App.FileManagement.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Volo.Abp.BlobStoring.FileSystem" Version="9.1.0" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="9.1.0" />
 		<PackageReference Include="Volo.Abp.BlobStoring.Database.Domain" Version="9.1.0" />
+		<PackageReference Include="Volo.Abp.VirtualFileSystem" Version="9.1.0" />
 		<ProjectReference Include="..\FileManagement.Domain.Shared\FileManagement.Domain.Shared.csproj" />
   </ItemGroup>
 

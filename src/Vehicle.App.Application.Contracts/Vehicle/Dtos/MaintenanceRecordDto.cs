@@ -1,7 +1,7 @@
 using System;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Vehicle.Dtos;
+namespace Vehicle.App.Application.Contracts.Vehicle.Dtos;
 
 public class MaintenanceRecordDto : AuditedEntityDto<Guid>
 {

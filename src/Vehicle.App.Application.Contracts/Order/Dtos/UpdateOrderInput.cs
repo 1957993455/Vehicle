@@ -1,4 +1,4 @@
-﻿namespace Vehicle.App.Order.Dtos;
+﻿namespace Vehicle.App.Application.Contracts.Order.Dtos;
 
 public class UpdateOrderInput
 {

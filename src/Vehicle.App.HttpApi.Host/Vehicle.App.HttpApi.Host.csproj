@@ -6,7 +6,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RootNamespace>Vehicle.App</RootNamespace>
+    <RootNamespace>Vehicle.App.HttpApi.Host</RootNamespace>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>
   </PropertyGroup>
 

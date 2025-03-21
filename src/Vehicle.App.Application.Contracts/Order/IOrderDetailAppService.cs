@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.Order.Dtos;
+using Vehicle.App.Application.Contracts.Order.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Vehicle.App.Order;
+namespace Vehicle.App.Application.Contracts.Order;
 
 /// <summary>
 /// 订单详情应用服务接口

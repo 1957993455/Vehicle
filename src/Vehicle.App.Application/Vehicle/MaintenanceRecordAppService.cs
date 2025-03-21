@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.Vehicle.Dtos;
+using Vehicle.App.Application.Contracts.Vehicle;
+using Vehicle.App.Application.Contracts.Vehicle.Dtos;
+using Vehicle.App.Domain.Vehicle;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Application.Vehicle;
 
 public class MaintenanceRecordAppService(
     IRepository<MaintenanceRecordEntity, Guid> maintenanceRepository,

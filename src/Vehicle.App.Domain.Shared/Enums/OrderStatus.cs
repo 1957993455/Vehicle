@@ -1,4 +1,4 @@
-namespace Vehicle.App.Enums;
+namespace Vehicle.App.Domain.Shared.Enums;
 /// <summary>
 /// 订单状态
 /// </summary>

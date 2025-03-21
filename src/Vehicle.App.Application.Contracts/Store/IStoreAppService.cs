@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.Enums;
-using Vehicle.App.Store.Dtos;
+using Vehicle.App.Application.Contracts.Store.Dtos;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Application.Services;
 
-namespace Vehicle.App.Store;
+namespace Vehicle.App.Application.Contracts.Store;
 
 public interface IStoreAppService : ICrudAppService<
     StoreDto,

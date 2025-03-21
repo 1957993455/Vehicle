@@ -6,7 +6,7 @@ using Serilog.Events;
 using System;
 using System.Threading.Tasks;
 
-namespace Vehicle.App;
+namespace Vehicle.App.HttpApi.Host;
 
 public class Program
 {

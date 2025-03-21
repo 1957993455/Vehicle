@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Volo.Abp.Domain.Values;
 
-namespace Vehicle.App.Store
+namespace Vehicle.App.Domain.Store
 {
     /// <summary>
     /// 地理坐标值对象
     /// </summary>
     public class GeoLocationValueObject : ValueObject
     {
-        public GeoLocationValueObject(double longitude, double latitude)
+        public GeoLocationValueObject(string longitude, string latitude)
         {
             Longitude = longitude;
             Latitude = latitude;
@@ -18,11 +18,11 @@ namespace Vehicle.App.Store
 
         /// <summary>经度（-180到180）</summary>
         [Range(-180, 180)]
-        public double Longitude { get; private set; }
+        public string Longitude { get; private set; }
 
         /// <summary>纬度（-90到90）</summary>
         [Range(-90, 90)]
-        public double Latitude { get; private set; }
+        public string Latitude { get; private set; }
 
         protected override IEnumerable<object> GetAtomicValues()
         {

@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Vehicle.App.FileManagement.Domain;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace FileManagement.EntityFrameworkCore;
+namespace Vehicle.App.FileManagement.EntityFrameworkCore.EntityFrameworkCore;
 
 [ConnectionStringName(FileManagementDbProperties.ConnectionStringName)]
 public class FileManagementDbContext : AbpDbContext<FileManagementDbContext>, IFileManagementDbContext

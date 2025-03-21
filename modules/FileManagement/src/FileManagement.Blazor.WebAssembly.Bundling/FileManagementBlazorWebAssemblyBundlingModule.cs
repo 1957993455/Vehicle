@@ -2,7 +2,7 @@
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 using Volo.Abp.Modularity;
 
-namespace FileManagement.Blazor.WebAssembly.Bundling;
+namespace Vehicle.App.FileManagement.Blazor.WebAssembly.Bundling;
 
 [DependsOn(
     typeof(AbpAspNetCoreComponentsWebAssemblyThemingBundlingModule)

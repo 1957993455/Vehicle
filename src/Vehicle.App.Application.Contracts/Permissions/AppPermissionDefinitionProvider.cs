@@ -1,8 +1,8 @@
-using Vehicle.App.Localization;
+using Vehicle.App.Domain.Shared.Localization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
 
-namespace Vehicle.App.Permissions;
+namespace Vehicle.App.Application.Contracts.Permissions;
 
 public class AppPermissionDefinitionProvider : PermissionDefinitionProvider
 {

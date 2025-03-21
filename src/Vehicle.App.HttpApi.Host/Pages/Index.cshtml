@@ -1,12 +1,14 @@
 ﻿@page
-@using Microsoft.AspNetCore.Mvc.Localization
 @using Microsoft.AspNetCore.Http.Extensions
-@using Vehicle.App.Localization
-@using Vehicle.App.Pages
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Vehicle.App.Domain.Shared.Localization
+@using Vehicle.App.HttpApi.Host.Pages
+@using Localization
+@using Pages
 @using Volo.Abp.Account.Localization
-@using Volo.Abp.Users
 @using Volo.Abp.AspNetCore.Mvc.UI.Theming
 @using Volo.Abp.Ui.Branding
+@using Volo.Abp.Users
 @model IndexModel
 @inject IHtmlLocalizer<AppResource> L
 @inject IHtmlLocalizer<AccountResource> AccountLocalizer

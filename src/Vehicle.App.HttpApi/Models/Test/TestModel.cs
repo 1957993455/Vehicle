@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vehicle.App.Models.Test;
+namespace Vehicle.App.HttpApi.Models.Test;
 
 public class TestModel
 {

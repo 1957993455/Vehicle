@@ -1,7 +1,7 @@
-﻿using Vehicle.App.Enums;
+﻿using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Vehicle.Dtos;
+namespace Vehicle.App.Application.Contracts.Vehicle.Dtos;
 
 /// <summary>
 /// 获取车辆列表时使用的输入数据传输对象，继承自 PagedAndSortedResultRequestDto，支持分页和排序。

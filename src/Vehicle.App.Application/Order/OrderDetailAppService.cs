@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vehicle.App.Order.Dtos;
+using Vehicle.App.Application.Contracts.Order;
+using Vehicle.App.Application.Contracts.Order.Dtos;
+using Vehicle.App.Domain.Order;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 
-namespace Vehicle.App.Order;
+namespace Vehicle.App.Application.Order;
 
 /// <summary>
 /// 订单详情应用服务实现

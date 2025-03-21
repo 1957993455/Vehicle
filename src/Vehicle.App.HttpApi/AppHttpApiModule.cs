@@ -1,7 +1,8 @@
 using AuditLogManagement;
-using FileManagement;
 using Localization.Resources.AbpUi;
-using Vehicle.App.Localization;
+using Vehicle.App.Application.Contracts;
+using Vehicle.App.Domain.Shared.Localization;
+using Vehicle.App.FileManagement.HttpApi;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -11,7 +12,7 @@ using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 
-namespace Vehicle.App;
+namespace Vehicle.App.HttpApi;
 
 [DependsOn(
    typeof(AppApplicationContractsModule),

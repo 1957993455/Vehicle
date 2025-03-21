@@ -8,7 +8,7 @@ using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 
-namespace Vehicle.App.Vehicle
+namespace Vehicle.App.Domain.Vehicle
 {
     public class VehiclePurchaseRecordDataSeedContributor : IDataSeedContributor, ITransientDependency
     {

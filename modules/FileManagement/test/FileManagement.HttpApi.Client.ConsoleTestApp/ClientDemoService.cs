@@ -50,7 +50,7 @@ public class ClientDemoService : ITransientDependency
 
         //Get access token using ABP's IIdentityModelAuthenticationService
 
-        var accessToken = await _authenticationService.GetAccessTokenAsync(
+        string accessToken = await _authenticationService.GetAccessTokenAsync(
             new IdentityClientConfiguration(
                 _configuration["IdentityClients:Default:Authority"],
                 _configuration["IdentityClients:Default:Scope"],
@@ -68,13 +68,13 @@ public class ClientDemoService : ITransientDependency
         {
             httpClient.SetBearerToken(accessToken);
 
-            var url = _configuration["RemoteServices:FileManagement:BaseUrl"] +
+            string url = _configuration["RemoteServices:FileManagement:BaseUrl"] +
                       "api/FileManagement/sample/authorized";
 
             var responseMessage = await httpClient.GetAsync(url);
             if (responseMessage.IsSuccessStatusCode)
             {
-                var responseString = await responseMessage.Content.ReadAsStringAsync();
+                string responseString = await responseMessage.Content.ReadAsStringAsync();
                 Console.WriteLine("Result: " + responseString);
             }
             else
@@ -127,13 +127,13 @@ public class ClientDemoService : ITransientDependency
         {
             httpClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var url = _configuration["RemoteServices:FileManagement:BaseUrl"] +
+            string url = _configuration["RemoteServices:FileManagement:BaseUrl"] +
                       "api/FileManagement/sample/authorized";
 
             var responseMessage = await httpClient.GetAsync(url);
             if (responseMessage.IsSuccessStatusCode)
             {
-                var responseString = await responseMessage.Content.ReadAsStringAsync();
+                string responseString = await responseMessage.Content.ReadAsStringAsync();
                 Console.WriteLine("Result: " + responseString);
             }
             else

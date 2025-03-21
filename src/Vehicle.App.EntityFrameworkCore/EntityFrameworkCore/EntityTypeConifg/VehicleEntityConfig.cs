@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
-using Vehicle.App.Vehicle;
+using Vehicle.App.Domain.Vehicle;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace Vehicle.App.EntityFrameworkCore.EntityTypeConifg;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore.EntityTypeConifg;
 
 public class VehicleEntityConfig : IEntityTypeConfiguration<VehicleAggregateRoot>
 {
@@ -29,11 +29,14 @@ public class VehicleEntityConfig : IEntityTypeConfiguration<VehicleAggregateRoot
         builder.Property(v => v.ImageUrl).IsRequired(false);
         builder.OwnsOne(x => x.Address, y =>
         {
-            y.Property(a => a.City).HasMaxLength(100).IsRequired();
-            y.Property(a => a.Province).HasMaxLength(100).IsRequired();
-            y.Property(a => a.Street).HasMaxLength(100).IsRequired();
-            y.Property(a => a.Detail).HasMaxLength(100).IsRequired();
-            y.Property(a => a.District).HasMaxLength(100).IsRequired();
+            y.Property(a => a.City).HasMaxLength(100).IsRequired(false);
+            y.Property(a => a.Province).HasMaxLength(100).IsRequired(false);
+            y.Property(a => a.Street).HasMaxLength(100).IsRequired(false);
+            y.Property(a => a.Detail).HasMaxLength(100).IsRequired(false);
+            y.Property(a => a.District).HasMaxLength(100).IsRequired(false);
+            y.Property(a => a.AdCode).HasMaxLength(10).IsRequired(false);
+            y.Property(a => a.Longitude).IsRequired(false);
+            y.Property(a => a.Latitude).IsRequired(false);
         });
         builder.ConfigureByConvention();
         builder.ApplyObjectExtensionMappings();

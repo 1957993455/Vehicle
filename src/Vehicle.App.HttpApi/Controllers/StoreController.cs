@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.Enums;
-using Vehicle.App.Store;
-using Vehicle.App.Store.Dtos;
+using Vehicle.App.Application.Contracts.Store;
+using Vehicle.App.Application.Contracts.Store.Dtos;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Controllers;
+namespace Vehicle.App.HttpApi.Controllers;
 
 [RemoteService]
 [Route("api/stores")]

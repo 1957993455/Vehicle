@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Vehicle.App.Organization;
-using Vehicle.App.Organization.Dtos;
+using Vehicle.App.Application.Contracts.Organization;
+using Vehicle.App.Application.Contracts.Organization.Dtos;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Controllers;
+namespace Vehicle.App.HttpApi.Controllers;
 
 [ControllerName("organization")]
 [Area("organization")]

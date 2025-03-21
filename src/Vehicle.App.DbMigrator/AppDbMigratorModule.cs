@@ -1,4 +1,5 @@
-﻿using Vehicle.App.EntityFrameworkCore;
+﻿using Vehicle.App.Application.Contracts;
+using Vehicle.App.EntityFrameworkCore.EntityFrameworkCore;
 using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
 

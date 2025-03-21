@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Modularity;
+﻿using Vehicle.App.Domain;
+using Volo.Abp.Modularity;
 
 namespace Vehicle.App;
 

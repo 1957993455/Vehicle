@@ -1,4 +1,4 @@
-﻿namespace FileManagement;
+﻿namespace Vehicle.App.FileManagement.Domain.Shared;
 
 public static class FileManagementErrorCodes
 {

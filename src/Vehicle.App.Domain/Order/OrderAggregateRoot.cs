@@ -1,8 +1,8 @@
 ﻿using System;
-using Vehicle.App.Enums;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Vehicle.App.Order;
+namespace Vehicle.App.Domain.Order;
 
 /// <summary>
 /// 订单聚合根

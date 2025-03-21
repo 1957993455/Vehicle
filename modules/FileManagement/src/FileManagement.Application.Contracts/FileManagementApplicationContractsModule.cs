@@ -1,8 +1,9 @@
-﻿using Volo.Abp.Application;
+﻿using Vehicle.App.FileManagement.Domain.Shared;
+using Volo.Abp.Application;
 using Volo.Abp.Authorization;
 using Volo.Abp.Modularity;
 
-namespace FileManagement;
+namespace FileManagement.Application.Contracts;
 
 [DependsOn(
     typeof(FileManagementDomainSharedModule),

@@ -1,11 +1,11 @@
 using System;
 using System.Threading.Tasks;
-using Vehicle.App.Enums;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Services;
 
-namespace Vehicle.App.Order;
+namespace Vehicle.App.Domain.Order;
 
 public class OrderManager : DomainService
 {

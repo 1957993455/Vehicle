@@ -1,7 +1,7 @@
 ﻿using System;
 using Volo.Abp.Data;
 
-namespace Vehicle.App.Organization.Dtos;
+namespace Vehicle.App.Application.Contracts.Organization.Dtos;
 
 /// <summary>
 /// 更新组织单元输入

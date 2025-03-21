@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Vehicle.Dtos;
+namespace Vehicle.App.Application.Contracts.Vehicle.Dtos;
 
 /// <summary>
 /// 获取车辆购买记录列表的查询参数

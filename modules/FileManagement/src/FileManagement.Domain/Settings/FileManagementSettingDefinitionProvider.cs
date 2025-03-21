@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Settings;
 
-namespace FileManagement.Settings;
+namespace Vehicle.App.FileManagement.Domain.Settings;
 
 public class FileManagementSettingDefinitionProvider : SettingDefinitionProvider
 {

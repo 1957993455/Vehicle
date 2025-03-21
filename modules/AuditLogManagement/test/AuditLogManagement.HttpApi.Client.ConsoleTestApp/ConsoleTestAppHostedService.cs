@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Volo.Abp;
 
-namespace AuditLogManagement.HttpApi.Client.ConsoleTestApp;
+namespace AuditLogManagement;
 
 public class ConsoleTestAppHostedService : IHostedService
 {

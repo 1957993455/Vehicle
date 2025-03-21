@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Localization;
-using Vehicle.App.Localization;
+using Vehicle.App.Domain.Shared.Localization;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Ui.Branding;
 
-namespace Vehicle.App;
+namespace Vehicle.App.HttpApi.Host;
 
 [Dependency(ReplaceServices = true)]
 public class AppBrandingProvider : DefaultBrandingProvider

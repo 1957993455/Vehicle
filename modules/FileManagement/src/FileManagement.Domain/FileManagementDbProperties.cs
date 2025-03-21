@@ -1,5 +1,4 @@
-﻿
-namespace FileManagement;
+﻿namespace Vehicle.App.FileManagement.Domain;
 
 public static class FileManagementDbProperties
 {

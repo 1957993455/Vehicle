@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using System.Threading;
 using System.Threading.Tasks;
-using Vehicle.App.Data;
+using Vehicle.App.Domain.Data;
 using Volo.Abp;
 using Volo.Abp.Data;
 

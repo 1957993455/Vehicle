@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using Vehicle.App.Vehicle;
-using Vehicle.App.Vehicle.Dtos;
+using Vehicle.App.Application.Contracts.Vehicle;
+using Vehicle.App.Application.Contracts.Vehicle.Dtos;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Controllers;
+namespace Vehicle.App.HttpApi.Controllers;
 
 /// <summary>
 /// 车辆购买记录API控制器

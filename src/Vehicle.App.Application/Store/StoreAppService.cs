@@ -2,18 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vehicle.App.Enums;
-using Vehicle.App.Store.Dtos;
-using Vehicle.App.ValueObjects;
+using Vehicle.App.Application.Contracts.Store;
+using Vehicle.App.Application.Contracts.Store.Dtos;
+using Vehicle.App.Domain.Shared.Enums;
+using Vehicle.App.Domain.Store;
+using Vehicle.App.Domain.ValueObjects;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.Store;
+namespace Vehicle.App.Application.Store;
 
 /// <summary>
-/// �ŵ�Ӧ�÷���
+/// 门店应用服务
 /// </summary>
 public class StoreAppService :
     CrudAppService<
@@ -40,14 +42,14 @@ public class StoreAppService :
 
     public override async Task<StoreDto> CreateAsync(CreateStoreInput input)
     {
-        var location = new GeoLocationValueObject(input.Longitude, input.Latitude);
-        var address = new AddressValueObject(input.Province, input.City, input.District, input.Street, input.Detail);
+        var location = new GeoLocationValueObject(input.Longitude ?? "", input.Latitude ?? "");
+        var address = new AddressValueObject(input.Province, input.City, input.District, input.Street, input.DetailAddress, input.Level, input.AdCode, input.Longitude, input.Latitude);
         var store = await _storeManager.CreateAsync(
             input.Name,
             input.StoreCode,
             address,
-            location,
-            input.RegionId);
+            location
+           );
 
         await Repository.InsertAsync(store);
         return ObjectMapper.Map<StoreAggregateRoot, StoreDto>(store);

@@ -1,4 +1,4 @@
-namespace Vehicle.App.Permissions;
+namespace Vehicle.App.Application.Contracts.Permissions;
 
 public static class AppPermissions
 {

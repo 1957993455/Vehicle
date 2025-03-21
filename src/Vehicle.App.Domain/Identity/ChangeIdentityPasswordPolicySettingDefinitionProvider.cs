@@ -1,7 +1,7 @@
 using Volo.Abp.Identity.Settings;
 using Volo.Abp.Settings;
 
-namespace Vehicle.App.Identity;
+namespace Vehicle.App.Domain.Identity;
 
 public class ChangeIdentityPasswordPolicySettingDefinitionProvider : SettingDefinitionProvider
 {

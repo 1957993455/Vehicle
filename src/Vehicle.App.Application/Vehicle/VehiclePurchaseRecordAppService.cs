@@ -2,12 +2,14 @@ using System;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
-using Vehicle.App.Vehicle.Dtos;
+using Vehicle.App.Application.Contracts.Vehicle;
+using Vehicle.App.Application.Contracts.Vehicle.Dtos;
+using Vehicle.App.Domain.Vehicle;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Application.Vehicle;
 
 /// <summary>
 /// 车辆购买记录应用服务实现

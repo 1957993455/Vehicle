@@ -1,9 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Vehicle.App.FileManagement.Domain;
 using Volo.Abp.BlobStoring.Database.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
-namespace FileManagement.EntityFrameworkCore;
+namespace Vehicle.App.FileManagement.EntityFrameworkCore.EntityFrameworkCore;
 
 [DependsOn(
     typeof(FileManagementDomainModule),

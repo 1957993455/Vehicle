@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vehicle.App.Order.Dtos;
+using Vehicle.App.Application.Contracts.Order;
+using Vehicle.App.Application.Contracts.Order.Dtos;
+using Vehicle.App.Domain.Order;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.Order;
+namespace Vehicle.App.Application.Order;
 
 public class OrderAppService(
     IRepository<OrderAggregateRoot, Guid> repository,
@@ -53,7 +55,7 @@ public class OrderAppService(
     {
         var query = await base.CreateFilteredQueryAsync(input);
         return query
-            .WhereIf(input.Status.HasValue, x => (input.Status != null) && x.Status == input.Status.Value)
+            .WhereIf(input.Status.HasValue, x => input.Status != null && x.Status == input.Status.Value)
             .WhereIf(input.CustomerId.HasValue, x => x.CustomerId == input.CustomerId)
             .WhereIf(input.VehicleId.HasValue, x => x.VehicleId == input.VehicleId);
     }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace FileManagement;
+namespace Vehicle.App.FileManagement.Application;
 
 public class FileManagementApplicationAutoMapperProfile : Profile
 {

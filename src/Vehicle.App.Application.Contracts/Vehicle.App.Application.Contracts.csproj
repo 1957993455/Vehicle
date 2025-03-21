@@ -5,7 +5,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <RootNamespace>Vehicle.App</RootNamespace>
+    <RootNamespace>Vehicle.App.Application.Contracts</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

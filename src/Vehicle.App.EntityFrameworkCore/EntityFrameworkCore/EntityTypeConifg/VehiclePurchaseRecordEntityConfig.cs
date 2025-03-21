@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Vehicle.App.Vehicle;
+using Vehicle.App.Domain.Vehicle;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace Vehicle.App.EntityFrameworkCore.EntityTypeConifg;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore.EntityTypeConifg;
 
 /// <summary>
 /// 车辆购买记录实体配置类

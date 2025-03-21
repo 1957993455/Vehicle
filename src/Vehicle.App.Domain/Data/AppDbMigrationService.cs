@@ -7,14 +7,14 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using Vehicle.App.MultiTenancy;
+using Vehicle.App.Domain.Shared.MultiTenancy;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Identity;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.TenantManagement;
 
-namespace Vehicle.App.Data;
+namespace Vehicle.App.Domain.Data;
 
 public class AppDbMigrationService : ITransientDependency
 {

@@ -1,7 +1,7 @@
 ﻿using Volo.Abp.Modularity;
 using Volo.Abp.VirtualFileSystem;
 
-namespace FileManagement;
+namespace Vehicle.App.FileManagement.Installer;
 
 [DependsOn(
     typeof(AbpVirtualFileSystemModule)

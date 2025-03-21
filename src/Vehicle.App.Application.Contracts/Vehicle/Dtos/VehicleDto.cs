@@ -1,8 +1,8 @@
 using System;
-using Vehicle.App.Enums;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Vehicle.Dtos;
+namespace Vehicle.App.Application.Contracts.Vehicle.Dtos;
 
 /// <summary>
 /// 车辆数据传输对象，继承自 AuditedEntityDto<Guid>，用于在不同层之间传输车辆的完整信息。

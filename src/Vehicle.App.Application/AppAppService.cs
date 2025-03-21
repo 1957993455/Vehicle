@@ -1,7 +1,7 @@
-﻿using Vehicle.App.Localization;
+﻿using Vehicle.App.Domain.Shared.Localization;
 using Volo.Abp.Application.Services;
 
-namespace Vehicle.App;
+namespace Vehicle.App.Application;
 
 /* Inherit your application services from this class.
  */

@@ -1,10 +1,11 @@
-﻿using Vehicle.App.Identity;
-using Vehicle.App.Identity.Enums;
+﻿using Vehicle.App.Domain.Shared;
+using Vehicle.App.Domain.Shared.Identity;
+using Vehicle.App.Domain.Shared.Identity.Enums;
 using Volo.Abp.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
 
-namespace Vehicle.App.EntityFrameworkCore;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore;
 
 public static class AppEfCoreEntityExtensionMappings
 {

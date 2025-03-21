@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Vehicle.App.Enums;
-using Vehicle.App.ValueObjects;
+using Vehicle.App.Domain.Shared.Enums;
+using Vehicle.App.Domain.ValueObjects;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Vehicle.App.Store
+namespace Vehicle.App.Domain.Store
 {
     /// <summary>
     /// 门店聚合根（表示实体门店业务单元，包含完整的门店信息和业务规则）
@@ -71,11 +71,6 @@ namespace Vehicle.App.Store
         #region 关联信息
 
         /// <summary>
-        /// 所属区域ID（关联区域聚合根）
-        /// </summary>
-        public Guid RegionId { get; private set; }
-
-        /// <summary>
         /// 店长用户ID（关联用户聚合根）
         /// </summary>
         public Guid? ManagerId { get; private set; }
@@ -133,7 +128,7 @@ namespace Vehicle.App.Store
         /// <param name="newAddress">完整地址</param>
         /// <param name="longitude">经度</param>
         /// <param name="latitude">纬度</param>
-        public void Relocate(AddressValueObject newAddress, double longitude, double latitude)
+        public void Relocate(AddressValueObject newAddress, string longitude, string latitude)
         {
             if (Status == StoreStatus.Operational)
                 throw new BusinessException("ERR-STORE-002", "营业中门店不可变更位置");
@@ -153,8 +148,8 @@ namespace Vehicle.App.Store
             string name,
             string storeCode,
             AddressValueObject address,
-            GeoLocationValueObject location,
-            Guid regionId)
+            GeoLocationValueObject location
+          )
         {
             ValidateName(name);
             ValidateStoreCode(storeCode);
@@ -163,8 +158,8 @@ namespace Vehicle.App.Store
             StoreCode = storeCode.ToUpperInvariant();
             Address = address;
             Location = location;
-            RegionId = regionId;
             Status = StoreStatus.Trial;
+            BusinessHours = "09:00-21:00";
         }
 
         private void ValidateName(string name)

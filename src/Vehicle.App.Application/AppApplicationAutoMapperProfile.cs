@@ -1,14 +1,14 @@
 using AutoMapper;
-using Vehicle.App.Order;
-using Vehicle.App.Order.Dtos;
-using Vehicle.App.Organization.Dtos;
-using Vehicle.App.Store;
-using Vehicle.App.Store.Dtos;
-using Vehicle.App.Vehicle;
-using Vehicle.App.Vehicle.Dtos;
+using Vehicle.App.Application.Contracts.Order.Dtos;
+using Vehicle.App.Application.Contracts.Organization.Dtos;
+using Vehicle.App.Application.Contracts.Store.Dtos;
+using Vehicle.App.Application.Contracts.Vehicle.Dtos;
+using Vehicle.App.Domain.Order;
+using Vehicle.App.Domain.Store;
+using Vehicle.App.Domain.Vehicle;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App;
+namespace Vehicle.App.Application;
 
 public class AppApplicationAutoMapperProfile : Profile
 {
@@ -28,12 +28,19 @@ public class AppApplicationAutoMapperProfile : Profile
             .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.Address.City))
             .ForMember(dest => dest.Province, opt => opt.MapFrom(src => src.Address.Province))
             .ForMember(dest => dest.Detail, opt => opt.MapFrom(src => src.Address.Detail))
-            .ForMember(dest => dest.Street, opt => opt.MapFrom(src => src.Address.Street))
             .ForMember(dest => dest.District, opt => opt.MapFrom(src => src.Address.District));
         CreateMap<CreateStoreInput, StoreAggregateRoot>();
         CreateMap<UpdateStoreInput, StoreAggregateRoot>();
         CreateMap<OrderAggregateRoot, OrderDto>();
         CreateMap<CreateOrderInput, OrderAggregateRoot>();
         CreateMap<UpdateOrderInput, OrderAggregateRoot>();
+        //        UpdateVehicleDto->VehicleAggregateRoot
+        //Vehicle.App.Vehicle.Dtos.UpdateVehicleDto->Vehicle.App.Vehicle.VehicleAggregateRoot
+
+        CreateMap<CreateVehicleInput, VehicleAggregateRoot>();
+        CreateMap<UpdateVehicleInput, VehicleAggregateRoot>();
+
+
+
     }
 }

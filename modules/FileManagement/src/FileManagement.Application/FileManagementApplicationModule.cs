@@ -1,9 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FileManagement.Application.Contracts;
+using Microsoft.Extensions.DependencyInjection;
+using Vehicle.App.FileManagement.Domain;
 using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 
-namespace FileManagement;
+namespace Vehicle.App.FileManagement.Application;
 
 [DependsOn(
     typeof(FileManagementDomainModule),

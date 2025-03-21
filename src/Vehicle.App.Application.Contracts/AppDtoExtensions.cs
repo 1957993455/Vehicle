@@ -1,10 +1,10 @@
 using System;
-using Vehicle.App.Identity;
+using Vehicle.App.Domain.Shared.Identity;
 using Volo.Abp.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
 
-namespace Vehicle.App;
+namespace Vehicle.App.Application.Contracts;
 
 public static class AppDtoExtensions
 {

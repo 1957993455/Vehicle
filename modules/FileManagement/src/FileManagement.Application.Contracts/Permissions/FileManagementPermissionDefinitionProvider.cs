@@ -1,8 +1,8 @@
-﻿using FileManagement.Localization;
+﻿using Vehicle.App.FileManagement.Domain.Shared.Localization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
 
-namespace FileManagement.Permissions;
+namespace FileManagement.Application.Contracts.Permissions;
 
 public class FileManagementPermissionDefinitionProvider : PermissionDefinitionProvider
 {

@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Reflection;
 
-namespace FileManagement.Permissions;
+namespace FileManagement.Application.Contracts.Permissions;
 
 public class FileManagementPermissions
 {

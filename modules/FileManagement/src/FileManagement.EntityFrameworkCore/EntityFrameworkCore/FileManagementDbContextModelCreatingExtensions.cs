@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 
-namespace FileManagement.EntityFrameworkCore;
+namespace Vehicle.App.FileManagement.EntityFrameworkCore.EntityFrameworkCore;
 
 public static class FileManagementDbContextModelCreatingExtensions
 {

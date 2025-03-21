@@ -1,4 +1,4 @@
-﻿namespace Vehicle.App.Settings;
+﻿namespace Vehicle.App.Domain.Settings;
 
 public static class AppSettings
 {

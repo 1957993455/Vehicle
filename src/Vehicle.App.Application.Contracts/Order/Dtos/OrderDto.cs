@@ -1,8 +1,8 @@
 using System;
-using Vehicle.App.Enums;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Order.Dtos;
+namespace Vehicle.App.Application.Contracts.Order.Dtos;
 
 public class OrderDto : AuditedEntityDto<Guid>
 {

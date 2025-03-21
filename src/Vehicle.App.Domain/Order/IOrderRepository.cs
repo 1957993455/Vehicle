@@ -1,6 +1,6 @@
 ﻿using System;
 using Volo.Abp.Domain.Repositories;
-namespace Vehicle.App.Order;
+namespace Vehicle.App.Domain.Order;
 
 /// <summary>
 /// 订单表仓储接口

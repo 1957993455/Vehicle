@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.Enums;
-using Vehicle.App.Permissions;
-using Vehicle.App.Vehicle;
-using Vehicle.App.Vehicle.Dtos;
+using Vehicle.App.Application.Contracts.Permissions;
+using Vehicle.App.Application.Contracts.Vehicle;
+using Vehicle.App.Application.Contracts.Vehicle.Dtos;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Controllers;
+namespace Vehicle.App.HttpApi.Controllers;
 
 [RemoteService]
 [Route("api/vehicle")]
@@ -38,14 +38,14 @@ public class VehicleController : AppController, IVehicleAppService
 
     [Authorize(AppPermissions.Vehicle.Create)]
     [HttpPost]
-    public Task<VehicleDto> CreateAsync(CreateVehicleDto input)
+    public Task<VehicleDto> CreateAsync(CreateVehicleInput input)
     {
         return _vehicleAppService.CreateAsync(input);
     }
 
     [Authorize(AppPermissions.Vehicle.Update)]
     [HttpPut("{id}")]
-    public Task<VehicleDto> UpdateAsync(Guid id, UpdateVehicleDto input)
+    public Task<VehicleDto> UpdateAsync(Guid id, UpdateVehicleInput input)
     {
         return _vehicleAppService.UpdateAsync(id, input);
     }
@@ -79,4 +79,5 @@ public class VehicleController : AppController, IVehicleAppService
 
     [HttpGet("search/{filter?}")]
     public Task<List<VehicleDto>> GetListAsync(string? filter = null) => _vehicleAppService.GetListAsync(filter);
+
 }

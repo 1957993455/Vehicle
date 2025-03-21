@@ -1,4 +1,4 @@
-﻿namespace FileManagement;
+﻿namespace FileManagement.Application.Contracts;
 
 public class FileManagementRemoteServiceConsts
 {

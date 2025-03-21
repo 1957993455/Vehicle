@@ -1,11 +1,11 @@
 using System;
 using System.Threading.Tasks;
-using Vehicle.App.ValueObjects;
+using Vehicle.App.Domain.ValueObjects;
 using Volo.Abp;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Services;
 
-namespace Vehicle.App.Store;
+namespace Vehicle.App.Domain.Store;
 
 public class StoreManager : DomainService
 {
@@ -20,8 +20,7 @@ public class StoreManager : DomainService
         string name,
         string storeCode,
         AddressValueObject fullAddress,
-        GeoLocationValueObject location,
-        Guid regionId)
+        GeoLocationValueObject location)
     {
         // 检查编码唯一性
         if (await _storeRepository.AnyAsync(x => x.StoreCode == storeCode))
@@ -33,7 +32,13 @@ public class StoreManager : DomainService
             name,
             storeCode,
             fullAddress,
-            location,
-            regionId);
+            location
+           );
     }
+
+    protected string GenerateStoreCode(AddressValueObject address)
+    {
+        return string.Empty;
+    }
+
 }

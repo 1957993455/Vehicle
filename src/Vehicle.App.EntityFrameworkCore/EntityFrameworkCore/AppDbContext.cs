@@ -1,9 +1,9 @@
 using AuditLogManagement.EntityFrameworkCore;
-using FileManagement.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Vehicle.App.Order;
-using Vehicle.App.Store;
-using Vehicle.App.Vehicle;
+using Vehicle.App.Domain.Order;
+using Vehicle.App.Domain.Store;
+using Vehicle.App.Domain.Vehicle;
+using Vehicle.App.FileManagement.EntityFrameworkCore.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
@@ -17,7 +17,7 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 
-namespace Vehicle.App.EntityFrameworkCore;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore;
 
 [ReplaceDbContext(typeof(IIdentityDbContext))]
 [ReplaceDbContext(typeof(ITenantManagementDbContext))]

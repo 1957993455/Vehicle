@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Vehicle.App.Order;
+using Vehicle.App.Domain.Order;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace Vehicle.App.EntityFrameworkCore.EntityTypeConifg;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore.EntityTypeConifg;
 
 public class OrderDetailEntityConfig : IEntityTypeConfiguration<OrderDetailEntity>
 {

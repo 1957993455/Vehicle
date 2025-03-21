@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Caching;
 
-namespace Vehicle.App.Controllers;
+namespace Vehicle.App.HttpApi.Controllers;
 
 [RemoteService(true, Name = "Test")]
 [Area("test")]

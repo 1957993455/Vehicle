@@ -1,4 +1,4 @@
-﻿namespace Vehicle.App;
+﻿namespace Vehicle.App.Domain.Shared;
 
 public static class AppDomainErrorCodes
 {

@@ -1,5 +1,6 @@
 using AuditLogManagement;
-using FileManagement;
+using FileManagement.Application.Contracts;
+using Vehicle.App.Domain.Shared;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -8,7 +9,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 
-namespace Vehicle.App;
+namespace Vehicle.App.Application.Contracts;
 
 [DependsOn(
     typeof(AppDomainSharedModule),

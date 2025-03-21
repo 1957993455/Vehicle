@@ -1,7 +1,7 @@
 ﻿using System;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Domain.Vehicle;
 
 /// <summary>
 /// 车辆维护记录实体（归属于车辆聚合根的明细记录）

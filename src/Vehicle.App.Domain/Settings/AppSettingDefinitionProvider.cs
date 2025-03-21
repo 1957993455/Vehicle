@@ -1,9 +1,9 @@
-﻿using Vehicle.App.Localization;
+﻿using Vehicle.App.Domain.Shared.Localization;
 using Volo.Abp.Emailing;
 using Volo.Abp.Localization;
 using Volo.Abp.Settings;
 
-namespace Vehicle.App.Settings;
+namespace Vehicle.App.Domain.Settings;
 
 public class AppSettingDefinitionProvider : SettingDefinitionProvider
 {

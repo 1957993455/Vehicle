@@ -1,6 +1,7 @@
 using AuditLogManagement.EntityFrameworkCore;
-using FileManagement.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Vehicle.App.Domain;
+using Vehicle.App.FileManagement.EntityFrameworkCore.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
@@ -13,7 +14,7 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.Studio;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 
-namespace Vehicle.App.EntityFrameworkCore;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore;
 
 [DependsOn(
     typeof(AppDomainModule),

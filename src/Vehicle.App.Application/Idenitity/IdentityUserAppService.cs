@@ -10,7 +10,7 @@ using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.Idenitity
+namespace Vehicle.App.Application.Idenitity
 {
 
     [Dependency(ReplaceServices = true)]
@@ -26,7 +26,7 @@ namespace Vehicle.App.Idenitity
         {
             Guid? organizationUnitId = input.GetProperty<Guid?>("OrganizationUnitId") ?? null;
             int? isActive = input.GetProperty<int?>("IsActive");
-            bool? notActive = isActive.HasValue ? (isActive.Value == 1 ? false : (isActive.Value == 2 ? true : null)) : null;
+            bool? notActive = isActive.HasValue ? isActive.Value == 1 ? false : isActive.Value == 2 ? true : null : null;
             long count = await UserRepository.GetCountAsync(input.Filter);
             List<IdentityUser> list = await UserRepository.GetListAsync(
                 input.Sorting,

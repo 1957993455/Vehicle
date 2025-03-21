@@ -5,7 +5,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <RootNamespace>Vehicle.App</RootNamespace>
+    <RootNamespace>Vehicle.App.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.OpenIddict.Domain" Version="9.1.0" />
     <PackageReference Include="Volo.Abp.Identity.Domain" Version="9.1.0" />
+    <PackageReference Include="Volo.Abp.Sms.Aliyun" Version="9.1.0" />
     <PackageReference Include="Volo.Abp.TenantManagement.Domain" Version="9.1.0" />
   </ItemGroup>
 

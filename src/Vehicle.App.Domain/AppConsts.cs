@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Identity;
 
-namespace Vehicle.App;
+namespace Vehicle.App.Domain;
 
 public static class AppConsts
 {

@@ -1,7 +1,8 @@
-﻿using Volo.Abp.Data;
+﻿using Vehicle.App.FileManagement.Domain;
+using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace FileManagement.EntityFrameworkCore;
+namespace Vehicle.App.FileManagement.EntityFrameworkCore.EntityFrameworkCore;
 
 [ConnectionStringName(FileManagementDbProperties.ConnectionStringName)]
 public interface IFileManagementDbContext : IEfCoreDbContext

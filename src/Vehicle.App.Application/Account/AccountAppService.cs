@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Vehicle.App.Application.Contracts.Account;
 using Volo.Abp;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Caching;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.Account
+namespace Vehicle.App.Application.Account
 {
 
     public class AccountAppService : ApplicationService, IAccountAppService

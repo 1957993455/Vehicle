@@ -1,9 +1,9 @@
 ﻿using System;
-using Vehicle.App.Enums;
-using Vehicle.App.Payments.Event;
+using Vehicle.App.Domain.Payments.Event;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Vehicle.App.Payments;
+namespace Vehicle.App.Domain.Payments;
 
 /// <summary>
 /// 支付聚合根

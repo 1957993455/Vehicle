@@ -6,7 +6,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
-        <RootNamespace>FileManagement</RootNamespace>
+        <RootNamespace>Vehicle.App.FileManagement.Installer</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

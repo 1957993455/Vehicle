@@ -1,8 +1,8 @@
 using System;
-using Vehicle.App.Enums;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Vehicle.Dtos;
+namespace Vehicle.App.Application.Contracts.Vehicle.Dtos;
 
 /// <summary>
 /// 车辆购买记录数据传输对象

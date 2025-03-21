@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Threading;
 
-namespace Vehicle.App;
+namespace Vehicle.App.Domain.Shared;
 
 public static class AppGlobalFeatureConfigurator
 {

@@ -8,13 +8,13 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
-using Vehicle.App.Openiddict;
+using Vehicle.App.Domain.Shared.Openiddict;
 using Volo.Abp.Identity;
 using Volo.Abp.OpenIddict;
 using Volo.Abp.OpenIddict.Controllers;
 using Volo.Abp.OpenIddict.ExtensionGrantTypes;
 
-namespace VehicleApp.HttpApi.Controllers;
+namespace Vehicle.App.HttpApi.Host.Controller;
 
 [IgnoreAntiforgeryToken]
 [ApiExplorerSettings(IgnoreApi = true)]
@@ -32,8 +32,8 @@ public class EmailTokenController : AbpOpenIdDictControllerBase, ITokenExtension
     public async Task<IActionResult> HandleUserAccessTokenAsync(ExtensionGrantContext context)
     {
         //验证验证码
-        var email = context.Request.GetParameter("username").ToString();
-        var code = context.Request.GetParameter("password").ToString();
+        string? email = context.Request.GetParameter("username").ToString();
+        string? code = context.Request.GetParameter("password").ToString();
 
         //校验参数
         if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(code))
@@ -46,7 +46,7 @@ public class EmailTokenController : AbpOpenIdDictControllerBase, ITokenExtension
                 }!));
         }
 
-        var accountAppService = context.HttpContext.RequestServices.GetRequiredService<Vehicle.App.Account.IAccountAppService>();
+        var accountAppService = context.HttpContext.RequestServices.GetRequiredService<Application.Contracts.Account.IAccountAppService>();
 
 
         //登录校验
@@ -105,7 +105,7 @@ public class EmailTokenController : AbpOpenIdDictControllerBase, ITokenExtension
             return resources;
         }
 
-        await foreach (var resource in context.HttpContext.RequestServices.GetRequiredService<IOpenIddictScopeManager>().ListResourcesAsync(scopes))
+        await foreach (string resource in context.HttpContext.RequestServices.GetRequiredService<IOpenIddictScopeManager>().ListResourcesAsync(scopes))
         {
             resources.Add(resource);
         }

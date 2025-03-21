@@ -1,4 +1,4 @@
-﻿namespace Vehicle.App.MultiTenancy;
+﻿namespace Vehicle.App.Domain.Shared.MultiTenancy;
 
 public static class MultiTenancyConsts
 {

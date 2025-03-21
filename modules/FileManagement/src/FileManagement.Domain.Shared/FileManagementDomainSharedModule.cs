@@ -1,4 +1,4 @@
-﻿using FileManagement.Localization;
+﻿using Vehicle.App.FileManagement.Domain.Shared.Localization;
 using Volo.Abp.BlobStoring.Database;
 using Volo.Abp.Domain;
 using Volo.Abp.Localization;
@@ -8,7 +8,7 @@ using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
 
-namespace FileManagement;
+namespace Vehicle.App.FileManagement.Domain.Shared;
 
 [DependsOn(
     typeof(AbpValidationModule),

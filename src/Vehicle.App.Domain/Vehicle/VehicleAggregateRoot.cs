@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Vehicle.App.Enums;
-using Vehicle.App.ValueObjects;
+using Vehicle.App.Domain.Shared.Enums;
+using Vehicle.App.Domain.ValueObjects;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Domain.Vehicle;
 
 /// <summary>
 /// 车辆聚合根类，继承自 FullAuditedAggregateRoot，使用 Guid 作为主键类型
@@ -79,6 +79,7 @@ public class VehicleAggregateRoot : FullAuditedAggregateRoot<Guid>
         AccidentHistory = new List<AccidentRecordEntity>();
         // 初始化购买记录集合
         Purchases = new List<VehiclePurchaseRecordEntity>();
+        Address = new AddressValueObject(string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
     }
 
     /// <summary>

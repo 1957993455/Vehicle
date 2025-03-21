@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Vehicle.App.HealthChecks;
+namespace Vehicle.App.HttpApi.Host.HealthChecks;
 
 public static class HealthChecksBuilderExtensions
 {

@@ -5,11 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-using Vehicle.App.Identity;
+using Vehicle.App.Application.Contracts.Identity;
 using Volo.Abp;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.Controllers
+namespace Vehicle.App.HttpApi.Controllers
 {
 
     /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Vehicle.App.Identity.Enums
+namespace Vehicle.App.Domain.Shared.Identity.Enums
 {
     public enum SexEnum
     {

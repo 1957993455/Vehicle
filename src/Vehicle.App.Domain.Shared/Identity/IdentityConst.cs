@@ -1,4 +1,4 @@
-﻿namespace Vehicle.App.Identity
+﻿namespace Vehicle.App.Domain.Shared.Identity
 {
     public static class IdentityConst
     {

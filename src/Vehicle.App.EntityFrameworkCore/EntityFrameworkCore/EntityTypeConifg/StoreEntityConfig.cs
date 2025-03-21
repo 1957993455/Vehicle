@@ -2,10 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Linq;
-using Vehicle.App.Store;
+using Vehicle.App.Domain.Store;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace Vehicle.App.EntityFrameworkCore.EntityTypeConifg;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore.EntityTypeConifg;
 
 public class StoreEntityConfig : IEntityTypeConfiguration<StoreAggregateRoot>
 {
@@ -81,17 +81,9 @@ public class StoreEntityConfig : IEntityTypeConfiguration<StoreAggregateRoot>
             .IsRequired()
             .HasComment("门店状态");
 
-        // 配置关联信息
-        builder.Property(x => x.RegionId)
-            .IsRequired()
-            .HasComment("所属区域ID");
 
         builder.Property(x => x.ManagerId)
             .HasComment("店长用户ID");
-
-        // 添加区域索引
-        builder.HasIndex(x => x.RegionId)
-            .HasDatabaseName("IX_Store_RegionId");
 
         // 配置扩展属性
         builder.Property(x => x.Tags)

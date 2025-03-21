@@ -1,7 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-namespace Vehicle.App.Enums;
+namespace Vehicle.App.Domain.Shared.Enums;
 
 public enum ClaimStatusEnum
 {

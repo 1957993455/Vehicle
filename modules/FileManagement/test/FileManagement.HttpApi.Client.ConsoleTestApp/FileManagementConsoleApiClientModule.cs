@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Autofac;
+﻿using Vehicle.App.FileManagement.HttpApi.Client;
+using Volo.Abp.Autofac;
 using Volo.Abp.Http.Client.IdentityModel;
 using Volo.Abp.Modularity;
 

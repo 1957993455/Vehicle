@@ -1,7 +1,7 @@
 using System;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Order.Dtos;
+namespace Vehicle.App.Application.Contracts.Order.Dtos;
 
 /// <summary>
 /// 订单详情数据传输对象
@@ -16,7 +16,7 @@ public class OrderDetailDto : AuditedEntityDto<Guid>
     /// <summary>
     /// 项目名称
     /// </summary>
-    public string ItemName { get; set; }
+    public string ItemName { get; set; } = null!;
 
     /// <summary>
     /// 单价
@@ -46,7 +46,7 @@ public class OrderDetailDto : AuditedEntityDto<Guid>
     /// <summary>
     /// 描述
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     /// 排序
@@ -67,7 +67,7 @@ public class CreateOrderDetailDto
     /// <summary>
     /// 项目名称
     /// </summary>
-    public string ItemName { get; set; }
+    public required string ItemName { get; set; }
 
     /// <summary>
     /// 单价
@@ -82,7 +82,7 @@ public class CreateOrderDetailDto
     /// <summary>
     /// 描述
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     /// 排序
@@ -113,7 +113,7 @@ public class UpdateOrderDetailDto
     /// <summary>
     /// 描述
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 }
 
 /// <summary>

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Vehicle.App.Enums;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Domain.Repositories;
 
-namespace Vehicle.App.Vehicle;
+namespace Vehicle.App.Domain.Vehicle;
 
 public interface IVehicleRepository : IRepository<VehicleAggregateRoot, Guid>
 {

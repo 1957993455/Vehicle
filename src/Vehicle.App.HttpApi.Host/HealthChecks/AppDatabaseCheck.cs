@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.HealthChecks;
+namespace Vehicle.App.HttpApi.Host.HealthChecks;
 
 public class AppDatabaseCheck : IHealthCheck, ITransientDependency
 {

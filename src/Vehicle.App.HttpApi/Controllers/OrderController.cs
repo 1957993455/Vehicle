@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
-using Vehicle.App.Order;
-using Vehicle.App.Order.Dtos;
+using Vehicle.App.Application.Contracts.Order;
+using Vehicle.App.Application.Contracts.Order.Dtos;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Controllers;
+namespace Vehicle.App.HttpApi.Controllers;
 
 [RemoteService]
 [Route("api/orders")]

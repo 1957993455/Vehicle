@@ -1,6 +1,6 @@
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
 
-namespace FileManagement.Blazor.WebAssembly.Bundling;
+namespace Vehicle.App.FileManagement.Blazor.WebAssembly.Bundling;
 
 public class FileManagementBundleScriptContributor : BundleContributor
 {

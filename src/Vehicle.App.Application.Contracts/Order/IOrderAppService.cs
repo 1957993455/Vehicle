@@ -1,8 +1,8 @@
 using System;
-using Vehicle.App.Order.Dtos;
+using Vehicle.App.Application.Contracts.Order.Dtos;
 using Volo.Abp.Application.Services;
 
-namespace Vehicle.App.Order;
+namespace Vehicle.App.Application.Contracts.Order;
 
 public interface IOrderAppService : ICrudAppService<
     OrderDto,

@@ -1,6 +1,7 @@
 using AuditLogManagement;
-using FileManagement;
 using Microsoft.Extensions.DependencyInjection;
+using Vehicle.App.Application.Contracts;
+using Vehicle.App.FileManagement.HttpApi.Client;
 using Volo.Abp.Account;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;

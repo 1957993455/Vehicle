@@ -1,4 +1,4 @@
-namespace Vehicle.App.Enums;
+namespace Vehicle.App.Domain.Shared.Enums;
 /// <summary>
 /// 支付方式
 /// </summary>

@@ -1,39 +1,53 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Vehicle.App.Store.Dtos;
+namespace Vehicle.App.Application.Contracts.Store.Dtos;
 
 public class CreateStoreInput
 {
-    public string Name { get; set; }
+    [Required(ErrorMessage = "名称不能为空")]
+    public string Name { get; set; } = null!;
 
-    public string StoreCode { get; set; }
 
-    public double Longitude { get; set; }
+    public string StoreCode { get; set; } = null!;
 
-    public double Latitude { get; set; }
+    public string? Longitude { get; set; }
 
-    public Guid RegionId { get; set; }
+    public string? Latitude { get; set; }
 
     public string? ImageUrl { get; set; }
     /// <summary>
     /// 省
     /// </summary>
-    public string Province { get; set; }
+    public string? Province { get; set; } = null!;
 
     /// <summary>
     /// 市
     /// </summary>
-    public string City { get; set; }
+    public string City { get; set; } = null!;
 
     /// <summary>
     /// 区
     /// </summary>
-    public string District { get; set; }
+    public string District { get; set; } = null!;
+
+    /// <summary>
+    /// 镇
+    /// </summary>
+    public string? Street { get; set; } = null!;
 
     /// <summary>
     /// 详细地址
     /// </summary>
-    public string Detail { get; set; }
+    public string? DetailAddress { get; set; } = null!;
 
-    public string Street { get; set; }
+    /// <summary>
+    /// 行政区划代码
+    /// </summary>
+    public string? AdCode { get; set; } = null!;
+    /// <summary>
+    /// 地址级别
+    /// </summary>
+    public string? Level { get; set; } = null!;
+
+
 }

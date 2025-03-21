@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Vehicle.App.Store.Dtos;
+namespace Vehicle.App.Application.Contracts.Store.Dtos;
 
 public class UpdateStoreInput
 {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.ValueObjects;
+using Vehicle.App.Domain.ValueObjects;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 
-namespace Vehicle.App.Vehicle
+namespace Vehicle.App.Domain.Vehicle
 {
     public class VehicleDataSeedContributor(IRepository<VehicleAggregateRoot, Guid> vehicleRepository) : IDataSeedContributor, ITransientDependency
     {
@@ -29,8 +29,8 @@ namespace Vehicle.App.Vehicle
                 string licensePlate = $"ABC-{i:D3}";
                 Guid storeId = Guid.NewGuid();
                 Guid ownerId = Guid.NewGuid();
-                var address1 = new AddressValueObject("贵州省", "贵阳市", "南明区", "云岩大道", "123号");
-                var address = new AddressValueObject("贵州省", "遵义市", "红花岗区", "新蒲新区", "123号");
+                var address1 = new AddressValueObject("贵州省", "贵阳市", "南明区", "云岩大道", "123号", "province", "city", "123", "street");
+                var address = new AddressValueObject("贵州省", "遵义市", "红花岗区", "新蒲新区", "123号", "province", "city", "123", "street");
                 VehicleAggregateRoot vehicle = new VehicleAggregateRoot(vehicleId, vin, make, model, year, color, mileage, licensePlate, storeId, ownerId);
                 vehicle.SetAddress(i % 2 == 0 ? address : address1);
                 vehicles.Add(vehicle);

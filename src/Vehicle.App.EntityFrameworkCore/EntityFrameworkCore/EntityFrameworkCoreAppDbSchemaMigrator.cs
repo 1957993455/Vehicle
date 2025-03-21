@@ -2,10 +2,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
-using Vehicle.App.Data;
+using Vehicle.App.Domain.Data;
 using Volo.Abp.DependencyInjection;
 
-namespace Vehicle.App.EntityFrameworkCore;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore;
 
 public class EntityFrameworkCoreAppDbSchemaMigrator
     : IAppDbSchemaMigrator, ITransientDependency

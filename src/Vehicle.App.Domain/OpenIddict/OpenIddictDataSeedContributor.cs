@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Vehicle.App.Domain.Shared.Openiddict;
 using Volo.Abp;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Data;
@@ -16,11 +17,8 @@ using Volo.Abp.OpenIddict.Scopes;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.Uow;
 
-namespace Vehicle.App.OpenIddict;
+namespace Vehicle.App.Domain.OpenIddict;
 
-/* Creates initial data that is needed to property run the application
- * and make client-to-server communication possible.
- */
 public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDependency
 {
     private readonly IConfiguration _configuration;
@@ -101,7 +99,11 @@ public class OpenIddictDataSeedContributor : IDataSeedContributor, ITransientDep
                     OpenIddictConstants.GrantTypes.ClientCredentials,
                     OpenIddictConstants.GrantTypes.RefreshToken,
                     "LinkLogin",
-                    "Impersonation"
+                    "Impersonation",
+                    //邮箱授权登录
+                    OpeniddictConst.Email.GrantType,
+                    //微信授权登录
+                    OpeniddictConst.WeChat.GrantType,
                 },
                 scopes: commonScopes,
                 redirectUri: consoleAndAngularClientRootUrl,

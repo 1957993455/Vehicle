@@ -4,17 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vehicle.App.Identity;
+using Vehicle.App.Application.Contracts.Identity;
 using Volo.Abp;
 using Volo.Abp.Identity;
 
-namespace Vehicle.App.Controllers;
+namespace Vehicle.App.HttpApi.Controllers;
 
 /// <summary>
 /// RoleController
 /// </summary>
 [RemoteService]
-[Microsoft.AspNetCore.Mvc.Route("api/identity/roles")]
+[Route("api/identity/roles")]
 [Area(IdentityRemoteServiceConsts.ModuleName)]
 [ControllerName("Role")]
 public class RoleController : AppController, IRoleAppService

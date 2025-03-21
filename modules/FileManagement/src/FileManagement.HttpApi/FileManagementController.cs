@@ -1,7 +1,7 @@
-﻿using FileManagement.Localization;
+﻿using Vehicle.App.FileManagement.Domain.Shared.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace FileManagement;
+namespace Vehicle.App.FileManagement.HttpApi;
 
 public abstract class FileManagementController : AbpControllerBase
 {

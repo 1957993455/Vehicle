@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
 using Volo.Abp.DependencyInjection;
 
-namespace Vehicle.App.Identity
+namespace Vehicle.App.Application.Contracts.Identity
 {
     public interface IRoleAppService : IApplicationService, ITransientDependency
     {

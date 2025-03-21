@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Vehicle.App.Enums;
+using Vehicle.App.Domain.Shared.Enums;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Store.Dtos;
+namespace Vehicle.App.Application.Contracts.Store.Dtos;
 
 public class StoreDto : AuditedEntityDto<Guid>
 {

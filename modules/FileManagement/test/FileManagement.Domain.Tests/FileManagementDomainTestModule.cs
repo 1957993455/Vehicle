@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Modularity;
+﻿using Vehicle.App.FileManagement.Domain;
+using Volo.Abp.Modularity;
 
 namespace FileManagement;
 

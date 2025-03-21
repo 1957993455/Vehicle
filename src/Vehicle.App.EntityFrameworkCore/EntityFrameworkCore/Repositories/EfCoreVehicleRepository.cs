@@ -5,12 +5,12 @@ using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Threading;
 using System.Threading.Tasks;
-using Vehicle.App.Enums;
-using Vehicle.App.Vehicle;
+using Vehicle.App.Domain.Shared.Enums;
+using Vehicle.App.Domain.Vehicle;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Vehicle.App.EntityFrameworkCore.Repositories;
+namespace Vehicle.App.EntityFrameworkCore.EntityFrameworkCore.Repositories;
 
 /// <summary>
 /// 车辆仓储实现

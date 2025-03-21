@@ -1,9 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FileManagement.Application.Contracts;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Http.Client;
 using Volo.Abp.Modularity;
 using Volo.Abp.VirtualFileSystem;
 
-namespace FileManagement;
+namespace Vehicle.App.FileManagement.HttpApi.Client;
 
 [DependsOn(
     typeof(FileManagementApplicationContractsModule),

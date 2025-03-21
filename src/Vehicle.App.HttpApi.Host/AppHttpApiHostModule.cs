@@ -12,9 +12,13 @@ using OpenIddict.Validation.AspNetCore;
 using System;
 using System.IO;
 using System.Linq;
-using Vehicle.App.EntityFrameworkCore;
-using Vehicle.App.HealthChecks;
-using Vehicle.App.MultiTenancy;
+using Vehicle.App.Application;
+using Vehicle.App.Application.Contracts;
+using Vehicle.App.Domain;
+using Vehicle.App.Domain.Shared;
+using Vehicle.App.Domain.Shared.MultiTenancy;
+using Vehicle.App.EntityFrameworkCore.EntityFrameworkCore;
+using Vehicle.App.HttpApi.Host.HealthChecks;
 using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.Account.Web;
@@ -26,6 +30,8 @@ using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
+using Volo.Abp.BlobStoring;
+using Volo.Abp.BlobStoring.FileSystem;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict;
 using Volo.Abp.Security.Claims;
@@ -34,7 +40,7 @@ using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 
-namespace Vehicle.App;
+namespace Vehicle.App.HttpApi.Host;
 
 [DependsOn(
     typeof(AppHttpApiModule),
@@ -65,7 +71,7 @@ public class AppHttpApiHostModule : AbpModule
             });
             builder.AddServer(options =>
             {
-                var lifetime = configuration.GetValue<int>("OpenIddictSetting:AccessTokenLifetime");
+                int lifetime = configuration.GetValue<int>("OpenIddictSetting:AccessTokenLifetime");
                 options.SetAccessTokenLifetime(TimeSpan.FromMinutes(lifetime));
             });
         });
@@ -108,6 +114,18 @@ public class AppHttpApiHostModule : AbpModule
                 options.ForwardedHeaders = ForwardedHeaders.XForwardedProto;
             });
         }
+
+
+        Configure<AbpBlobStoringOptions>(options =>
+        {
+            options.Containers.ConfigureDefault(container =>
+            {
+                container.UseFileSystem(fileSystem =>
+                {
+                    fileSystem.BasePath = Path.Combine(hostingEnvironment.WebRootPath, "files");
+                });
+            });
+        });
 
         ConfigureAuthentication(context);
         ConfigureUrls(configuration);

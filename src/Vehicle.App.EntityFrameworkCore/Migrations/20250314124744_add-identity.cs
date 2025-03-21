@@ -5,7 +5,9 @@
 namespace Vehicle.App.Migrations
 {
     /// <inheritdoc />
+#pragma warning disable IDE1006 // 命名样式
     public partial class addidentity : Migration
+#pragma warning restore IDE1006 // 命名样式
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

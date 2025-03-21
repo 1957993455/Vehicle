@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Organization.Dtos;
+namespace Vehicle.App.Application.Contracts.Organization.Dtos;
 
 public class OrganizationUnitDto : AuditedEntityDto<Guid>
 {

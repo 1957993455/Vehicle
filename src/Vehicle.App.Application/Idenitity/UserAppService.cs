@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vehicle.App.Identity;
+using Vehicle.App.Application.Contracts.Identity;
+using Vehicle.App.Domain.Shared.Identity;
 using Volo.Abp;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Data;
@@ -12,7 +13,7 @@ using Volo.Abp.Identity;
 using Volo.Abp.Uow;
 using Volo.Abp.Users;
 
-namespace Vehicle.App.Idenitity
+namespace Vehicle.App.Application.Idenitity
 {
 
 

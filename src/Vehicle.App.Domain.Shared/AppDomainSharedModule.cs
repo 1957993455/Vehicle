@@ -1,6 +1,6 @@
 using AuditLogManagement;
-using FileManagement;
-using Vehicle.App.Localization;
+using Vehicle.App.Domain.Shared.Localization;
+using Vehicle.App.FileManagement.Domain.Shared;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -13,7 +13,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
-namespace Vehicle.App;
+namespace Vehicle.App.Domain.Shared;
 
 [DependsOn(
     typeof(AbpBackgroundJobsDomainSharedModule),

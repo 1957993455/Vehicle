@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.Order;
-using Vehicle.App.Order.Dtos;
+using Vehicle.App.Application.Contracts.Order;
+using Vehicle.App.Application.Contracts.Order.Dtos;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Controllers;
+namespace Vehicle.App.HttpApi.Controllers;
 
 /// <summary>
 /// 订单详情API控制器

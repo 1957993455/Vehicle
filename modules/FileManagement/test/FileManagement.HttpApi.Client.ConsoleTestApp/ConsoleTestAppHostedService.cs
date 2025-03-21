@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Volo.Abp;
 
-namespace FileManagement.HttpApi.Client.ConsoleTestApp;
+namespace FileManagement;
 
 public class ConsoleTestAppHostedService : IHostedService
 {

@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Application.Dtos;
 
-namespace Vehicle.App.Organization.Dtos;
+namespace Vehicle.App.Application.Contracts.Organization.Dtos;
 
 /// <summary>
 /// 获取组织单元输入

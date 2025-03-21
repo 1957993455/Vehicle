@@ -1,11 +1,12 @@
-﻿using FileManagement.Localization;
+﻿using FileManagement.Application.Contracts;
 using Localization.Resources.AbpUi;
 using Microsoft.Extensions.DependencyInjection;
+using Vehicle.App.FileManagement.Domain.Shared.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 
-namespace FileManagement;
+namespace Vehicle.App.FileManagement.HttpApi;
 
 [DependsOn(
     typeof(FileManagementApplicationContractsModule),

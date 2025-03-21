@@ -1,7 +1,7 @@
 ﻿using System;
-using Vehicle.App.Enums;
+using Vehicle.App.Domain.Shared.Enums;
 
-namespace Vehicle.App.Vehicle.Dtos;
+namespace Vehicle.App.Application.Contracts.Vehicle.Dtos;
 
 /// <summary>
 /// 创建车辆购买记录输入DTO

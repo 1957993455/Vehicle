@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Vehicle.App.ValueObjects;
+using Vehicle.App.Domain.ValueObjects;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
 
-namespace Vehicle.App.Store;
+namespace Vehicle.App.Domain.Store;
 
 public class StoreDataSeedContributor(IRepository<StoreAggregateRoot, Guid> storeRepository) : IDataSeedContributor, ITransientDependency
 {
@@ -21,13 +21,13 @@ public class StoreDataSeedContributor(IRepository<StoreAggregateRoot, Guid> stor
 
         for (int i = 1; i <= 20; i++)
         {
-            var name = $"品牌{i} {RandomLocation()}旗舰店";
-            var storeCode = $"STORE_{RandomRegionCode()}_{RandomLocationCode()}_{i:000}";
-            var fullAddress = $"{RandomCity()} {RandomDistrict()} {RandomStreet()}";
-            var location = new GeoLocationValueObject(RandomDouble(), RandomDouble());
+            string name = $"品牌{i} {RandomLocation()}旗舰店";
+            string storeCode = $"STORE_{RandomRegionCode()}_{RandomLocationCode()}_{i:000}";
+            string fullAddress = $"{RandomCity()} {RandomDistrict()} {RandomStreet()}";
+            var location = new GeoLocationValueObject(RandomDouble().ToString(), RandomDouble().ToString());
             var regionId = Guid.NewGuid();
-            var address = new AddressValueObject("中国", "北京市", "北京市", "中国", "北京市");
-            var store = new StoreAggregateRoot(name, storeCode, address, location, regionId);
+            var address = new AddressValueObject("中国", "北京市", "北京市", "中国", "北京市", "provice", "123544", location.Latitude, location.Longitude);
+            var store = new StoreAggregateRoot(name, storeCode, address, location);
             store.SetBusinessHours("9:00-18:00");
 
             stores.Add(store);
